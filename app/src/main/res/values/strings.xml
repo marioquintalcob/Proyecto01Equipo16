@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Proyecto01Equipo16</string>
+    <string name="botonLogin">Iniciar Sesión</string>
+    <string name="botonRegistro">Registrarme</string>
+    <string name="olvidoContrasena">olvidé mi contraseña</string>
+    <string name="recuperar1">Ingresa el email con el que creaste tu cuenta</string>
+    <string name="recuperar2">Recuperar contraseña</string>
+</resources>
