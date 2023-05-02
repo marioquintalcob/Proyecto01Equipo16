@@ -27,6 +27,7 @@
         android:layout_height="46dp"
         android:layout_marginBottom="78dp"
         android:drawableLeft="@drawable/lock_icon"
+        android:fontFamily="@font/sf_regular"
         android:ems="10"
         android:hint="  contraseña"
         android:inputType="textPassword"
