@@ -51,7 +51,13 @@ class LoginActivity : AppCompatActivity() {
             }
 
             if (loginExitoso) {
-                Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
+                // Pasa a la pantalla del Navigation Bar
+                val bundle = Bundle()
+                val intent = Intent(this, Navbar::class.java ).apply{
+                    putExtras(bundle)
+                }
+                startActivity(intent)
+
             } else {
                 Toast.makeText(this, "Datos incorrectos, favor de verificar", Toast.LENGTH_SHORT).show()
             }
