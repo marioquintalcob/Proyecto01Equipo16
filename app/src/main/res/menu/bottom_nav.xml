@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Inicio"
+        android:id="@+id/home"
+        android:icon="@drawable/baseline_home_24"
+        />
+    <item android:title="Comunidad"
+        android:id="@+id/comunidad"
+        android:icon="@drawable/baseline_people_24"
+        />
+    <item android:title="Nutrición"
+        android:id="@+id/nutricion"
+        android:icon="@drawable/baseline_food_bank_24"
+        />
+    <item android:title="Perfil"
+        android:id="@+id/perfil"
+        android:icon="@drawable/baseline_person_24"
+        />
+</menu>

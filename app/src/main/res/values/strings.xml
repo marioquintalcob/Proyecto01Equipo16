@@ -5,4 +5,6 @@
     <string name="olvidoContrasena">olvidé mi contraseña</string>
     <string name="recuperar1">Ingresa el email con el que creaste tu cuenta</string>
     <string name="recuperar2">Recuperar contraseña</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
