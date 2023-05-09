@@ -1,5 +1,6 @@
 package org.bedu.proyecto01equipo16
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -30,7 +31,11 @@ class RecopassActivity : AppCompatActivity() {
             }
 
             if (emailExistente) {
-                Toast.makeText(this, "Mensaje de recuperacion enviado, revise su bandeja.", Toast.LENGTH_SHORT).show()
+                val bundle = Bundle()
+                val intent = Intent(this, SendpassActivity::class.java ).apply{
+                    putExtras(bundle)
+                }
+                startActivity(intent)
 
             } else {
                 Toast.makeText(this, "Correo no registrado, favor de verificar", Toast.LENGTH_SHORT).show()
