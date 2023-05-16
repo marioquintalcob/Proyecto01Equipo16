@@ -35,7 +35,8 @@ class LoginActivity : AppCompatActivity() {
             val usuarios = listOf(
                 Pair("mario.e.quintal.cob@hotmail.com", "1234"),
                 Pair("otro.usuario@example.com", "contrasena"),
-                Pair("usuario3@example.com", "123456")
+                Pair("usuario3@example.com", "123456"),
+                Pair("diego@gmail.com","1234")
             )
 
             val emailIngresado = email.text.toString()
