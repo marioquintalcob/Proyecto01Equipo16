@@ -13,6 +13,17 @@
     <string name="google">CONTINUAR CON GOOGLE</string>
     <string name="facebook">CONTINUAR CON FACEBOOK</string>
     <string name="terminos">Al continuar, acepta nuestros Términos de uso y Políticas de privacidad.</string>
+    <!-- Workouts names -->
+    <string name="titles_a">Sentadillas</string>
+    <string name="titles_b">Planchas</string>
+    <string name="titles_c">Jumping Jacks</string>
+    <string name="titles_d">Abdominales</string>
+    <!-- Workouts details -->
+    <string name="details_a">2 series x 15 reps</string>
+    <string name="details_b">2 series x 15 reps</string>
+    <string name="details_c">2 series x 15 reps</string>
+    <string name="details_d">2 series x 15 reps</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
