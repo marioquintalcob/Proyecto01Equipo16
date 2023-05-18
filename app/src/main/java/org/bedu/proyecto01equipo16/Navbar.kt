@@ -21,7 +21,7 @@ class Navbar : AppCompatActivity() {
 
                 R.id.home -> replaceFragment(Home())
                 R.id.comunidad -> replaceFragment(Comunity())
-                R.id.nutricion -> replaceFragment(Routines())
+                R.id.rutinas -> replaceFragment(Rutinas())
                 R.id.perfil -> replaceFragment(Profile())
 
                 else -> {

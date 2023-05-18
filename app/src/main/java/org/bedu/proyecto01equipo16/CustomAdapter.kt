@@ -18,7 +18,7 @@ class CustomAdapter(private val titles:ArrayList<workouts>): RecyclerView.Adapte
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
         val currentItem = titles[i]
         viewHolder.tvHeading.text = details[i]
-        viewHolder.titleImage.setImageResource(imageId[i])
+        viewHolder.titleImage.setImageResource(imagenejercicio[i])
     }
     override fun getItemCount(): Int{
         return titles.size

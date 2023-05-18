@@ -17,8 +17,8 @@ private lateinit var adapter: CustomAdapter
 private lateinit var recyclerView: RecyclerView
 private lateinit var titlesArraylist: ArrayList<workouts>
 
-lateinit var imageId: Array<Int>
-lateinit var titles: Array<String>
+lateinit var imagenejercicio: Array<Int>
+lateinit var nombreejercicio: Array<String>
 lateinit var details: Array<String>
 
 /**
@@ -26,7 +26,7 @@ lateinit var details: Array<String>
  * Use the [Nutrition.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Routines : Fragment() {
+class Rutinas : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -59,7 +59,7 @@ class Routines : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Routines().apply {
+            Rutinas().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -69,7 +69,7 @@ class Routines : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        dataInitialize()
+        datosRutinas()
         val layoutManager = LinearLayoutManager(context)
         recyclerView=view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager=layoutManager
@@ -78,9 +78,9 @@ class Routines : Fragment() {
         recyclerView.adapter = adapter
     }
 
-    private fun dataInitialize(){
+    private fun datosRutinas(){
        titlesArraylist = arrayListOf<workouts>()
-        imageId = arrayOf(
+        imagenejercicio = arrayOf(
             R.drawable.a,
             R.drawable.b,
             R.drawable.c,
@@ -89,6 +89,7 @@ class Routines : Fragment() {
             R.drawable.b,
             R.drawable.c,
             R.drawable.d,)
+
 
         details = arrayOf(
             getString(R.string.titles_a),
@@ -101,7 +102,7 @@ class Routines : Fragment() {
             getString(R.string.titles_d),
 
         )
-        titles = arrayOf(
+        nombreejercicio = arrayOf(
             getString(R.string.details_a),
             getString(R.string.details_b),
             getString(R.string.details_c),
@@ -112,8 +113,8 @@ class Routines : Fragment() {
             getString(R.string.details_d),
         )
 
-        for(i in imageId.indices){
-            val details = workouts(titles[i], details[i])
+        for(i in imagenejercicio.indices){
+            val details = workouts(nombreejercicio[i], details[i])
             titlesArraylist.add(details)
         }
     }

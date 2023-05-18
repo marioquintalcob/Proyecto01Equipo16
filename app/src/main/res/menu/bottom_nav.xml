@@ -10,7 +10,7 @@
         android:icon="@drawable/baseline_people_24"
         />
     <item
-        android:id="@+id/nutricion"
+        android:id="@+id/rutinas"
         android:icon="@drawable/baseline_fitness_center_24"
         android:title="Rutinas" />
     <item android:title="Perfil"
