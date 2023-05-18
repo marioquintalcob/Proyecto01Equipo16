@@ -6,15 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/txtEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.721"
+        app:srcCompat="@drawable/muscle_logo"
+        tools:srcCompat="@tools:sample/avatars" />
+
     <EditText
         android:id="@+id/txtEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="24dp"
+        android:drawableLeft="@drawable/email_ic"
+        android:drawablePadding="12dp"
         android:ems="10"
         android:fontFamily="@font/sf_regular"
-        android:drawableLeft="@drawable/email_icon"
-        android:hint="  email"
+        android:hint="email"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/txtPassword"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,11 +39,12 @@
         android:id="@+id/txtPassword"
         android:layout_width="210dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="78dp"
-        android:drawableLeft="@drawable/lock_icon"
-        android:fontFamily="@font/sf_regular"
+        android:layout_marginBottom="44dp"
+        android:drawableLeft="@drawable/lock_ic"
+        android:drawablePadding="12dp"
         android:ems="10"
-        android:hint="  contraseña"
+        android:fontFamily="@font/sf_regular"
+        android:hint="contraseña"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +55,7 @@
         android:id="@+id/btnLogin2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="36dp"
         android:backgroundTint="@color/orange"
         android:fontFamily="@font/sf_regular"
         android:text="@string/botonLogin"
@@ -48,45 +63,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/txtReco"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="156dp"
-        android:fontFamily="@font/sf_regular"
-        android:text="@string/olvidoContrasena"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/txtEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="23dp"
-        android:layout_height="23dp"
+        android:layout_width="26dp"
+        android:layout_height="31dp"
         android:layout_marginEnd="176dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="2.0"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.843"
+        app:layout_constraintVertical_bias="0.915"
         app:srcCompat="@drawable/gmail_icon" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="28dp"
-        android:layout_height="22dp"
+        android:layout_width="31dp"
+        android:layout_height="30dp"
         android:layout_marginStart="168dp"
         android:layout_marginRight="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -94,6 +87,19 @@
         app:layout_constraintHorizontal_bias="2.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.842"
+        app:layout_constraintVertical_bias="0.913"
         app:srcCompat="@drawable/face_icon" />
+
+    <TextView
+        android:id="@+id/txtReco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="104dp"
+        android:fontFamily="@font/sf_regular"
+        android:text="@string/olvidoContrasena"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
