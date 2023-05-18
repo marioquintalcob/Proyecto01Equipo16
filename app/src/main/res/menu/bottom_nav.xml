@@ -9,10 +9,10 @@
         android:id="@+id/comunidad"
         android:icon="@drawable/baseline_people_24"
         />
-    <item android:title="Nutrición"
+    <item
         android:id="@+id/nutricion"
-        android:icon="@drawable/baseline_food_bank_24"
-        />
+        android:icon="@drawable/baseline_fitness_center_24"
+        android:title="Rutinas" />
     <item android:title="Perfil"
         android:id="@+id/perfil"
         android:icon="@drawable/baseline_person_24"

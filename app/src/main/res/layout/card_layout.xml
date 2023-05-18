@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
 android:layout_height="wrap_content"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 android:paddingTop="8dp"
 android:layout_marginHorizontal="8dp"
 android:background="@color/white"
+    android:elevation="4dp"
 android:foreground="?android:attr/selectableItemBackground">
 
 <com.google.android.material.imageview.ShapeableImageView
@@ -15,25 +17,46 @@ android:foreground="?android:attr/selectableItemBackground">
     android:adjustViewBounds="true"
     android:scaleType="centerCrop"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    android:src="@drawable/a"/>
-
-<TextView
-    android:id="@+id/tvHeading"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:textColor="@color/black"
-    android:text="Este es el nombre de tu ejercicio"
-    android:textSize="16dp"
-    android:textStyle="bold"
-    android:layout_marginStart="16dp"
+    android:src="@drawable/a"
     android:layout_marginEnd="32dp"
-    android:layout_marginTop="8dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="@+id/title_image"
-    app:layout_constraintTop_toTopOf="parent" />
+    app:layout_constraintTop_toTopOf="parent"
+    />
 
-<View
+
+    <TextView
+        android:id="@+id/tvHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/title_image"
+        android:text="Diego"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toEndOf="@+id/title_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="Este es el nombre de tu ejercicio"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/title_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.53" />
+
+    <View
     android:layout_width="match_parent"
     android:layout_height="1dp"
     android:layout_margin="8dp"

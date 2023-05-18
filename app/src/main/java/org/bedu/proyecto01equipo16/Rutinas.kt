@@ -26,7 +26,7 @@ lateinit var details: Array<String>
  * Use the [Nutrition.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Nutrition : Fragment() {
+class Routines : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -59,7 +59,7 @@ class Nutrition : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Nutrition().apply {
+            Routines().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -80,25 +80,36 @@ class Nutrition : Fragment() {
 
     private fun dataInitialize(){
        titlesArraylist = arrayListOf<workouts>()
-        val imageId = intArrayOf(
+        imageId = arrayOf(
+            R.drawable.a,
+            R.drawable.b,
+            R.drawable.c,
+            R.drawable.d,
             R.drawable.a,
             R.drawable.b,
             R.drawable.c,
             R.drawable.d,)
 
-        titles = arrayOf(
+        details = arrayOf(
             getString(R.string.titles_a),
             getString(R.string.titles_b),
             getString(R.string.titles_c),
-            getString(R.string.titles_d)
+            getString(R.string.titles_d),
+            getString(R.string.titles_a),
+            getString(R.string.titles_b),
+            getString(R.string.titles_c),
+            getString(R.string.titles_d),
 
         )
-        details = arrayOf(
+        titles = arrayOf(
             getString(R.string.details_a),
             getString(R.string.details_b),
             getString(R.string.details_c),
-            getString(R.string.details_d)
-
+            getString(R.string.details_d),
+                    getString(R.string.details_a),
+            getString(R.string.details_b),
+            getString(R.string.details_c),
+            getString(R.string.details_d),
         )
 
         for(i in imageId.indices){
