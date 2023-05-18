@@ -32,11 +32,15 @@ class LoginActivity : AppCompatActivity() {
         pass = findViewById(R.id.txtPassword)
 
         boton.setOnClickListener {
+            // Actualice los correos con los reales del equipo.
             val usuarios = listOf(
                 Pair("mario.e.quintal.cob@hotmail.com", "1234"),
                 Pair("otro.usuario@example.com", "contrasena"),
                 Pair("usuario3@example.com", "123456"),
-                Pair("diego@gmail.com","1234")
+                Pair("diego@gmail.com","1234"),
+                Pair("n-diegotorres@hotmail.com", "1234"),
+                Pair("yaelramirezmendez@gmail.com", "1234"),
+                Pair("eguzmanh04@gmail.com", "1234")
             )
 
             val emailIngresado = email.text.toString()
