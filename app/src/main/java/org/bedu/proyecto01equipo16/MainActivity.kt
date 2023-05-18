@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         boton2.setOnClickListener {
             val bundle = Bundle()
 
-            val intent = Intent(this, Rutinas::class.java ).apply{
+            val intent = Intent(this, RegisterActivity::class.java ).apply{
                 putExtras(bundle)
             }
 
