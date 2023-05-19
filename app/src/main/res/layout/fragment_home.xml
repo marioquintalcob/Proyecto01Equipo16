@@ -197,10 +197,10 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="10dp"
-            app:cardCornerRadius="40dp">
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:cardCornerRadius="8dp">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -227,12 +227,12 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="160dp"
                 android:layout_height="184dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:backgroundTint="#6280B8"
-                app:cardCornerRadius="20dp">
+                app:cardCornerRadius="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -304,12 +304,12 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="160dp"
                 android:layout_height="184dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:backgroundTint="#535070"
-                app:cardCornerRadius="20dp">
+                app:cardCornerRadius="8dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
