@@ -3,10 +3,12 @@
 
     <item android:title="Inicio"
         android:id="@+id/home"
+        android:fontFamily="@font/jakarta_regular"
         android:icon="@drawable/baseline_home_24"
         />
     <item android:title="Comunidad"
         android:id="@+id/comunidad"
+        android:fontFamily="@font/jakarta_regular"
         android:icon="@drawable/baseline_people_24"
         />
     <item
