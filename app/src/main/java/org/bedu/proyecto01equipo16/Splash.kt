@@ -19,9 +19,9 @@ class Splash : AppCompatActivity() {
         supportActionBar?.hide()
         this.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
-        val logo = findViewById<ImageView>(R.id.giflogo)
+        val logo = findViewById<ImageView>(R.id.muscle_logo)
 
-        Glide.with(this).load(R.drawable.muscle_logo).into(logo)
+        Glide.with(this).load(R.drawable.muscle_logo_512).into(logo)
 
         cambiarActivity()
     }
