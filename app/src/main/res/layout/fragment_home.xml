@@ -49,56 +49,56 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:fontFamily="@font/jakarta_regular"
+                android:gravity="center"
                 android:text="Día" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:fontFamily="@font/jakarta_regular"
+                android:gravity="center"
                 android:text="Día" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:fontFamily="@font/jakarta_regular"
+                android:gravity="center"
                 android:text="Día" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:fontFamily="@font/jakarta_regular"
+                android:gravity="center"
                 android:text="Día" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:fontFamily="@font/jakarta_regular"
+                android:gravity="center"
                 android:text="Día" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:fontFamily="@font/jakarta_regular"
+                android:gravity="center"
                 android:text="Día" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:fontFamily="@font/jakarta_regular"
+                android:gravity="center"
                 android:text="Día" />
 
         </LinearLayout>
@@ -125,8 +125,8 @@
                     android:background="@drawable/pink_circle_drawable"
                     android:button="@null"
                     android:checked="true"
-                    android:gravity="center"
                     android:fontFamily="@font/jakarta_regular"
+                    android:gravity="center"
                     android:text="1"
                     android:textColor="@color/white" />
 
@@ -136,8 +136,8 @@
                     android:layout_weight="1"
                     android:button="@null"
                     android:checked="false"
-                    android:gravity="center"
                     android:fontFamily="@font/jakarta_regular"
+                    android:gravity="center"
                     android:text="2"
                     android:textColor="@color/black" />
 
@@ -147,8 +147,8 @@
                     android:layout_weight="1"
                     android:button="@null"
                     android:checked="false"
-                    android:gravity="center"
                     android:fontFamily="@font/jakarta_regular"
+                    android:gravity="center"
                     android:text="3"
                     android:textColor="@color/black" />
 
@@ -158,8 +158,8 @@
                     android:layout_weight="1"
                     android:button="@null"
                     android:checked="false"
-                    android:gravity="center"
                     android:fontFamily="@font/jakarta_regular"
+                    android:gravity="center"
                     android:text="4"
                     android:textColor="@color/black" />
 
@@ -169,8 +169,8 @@
                     android:layout_weight="1"
                     android:button="@null"
                     android:checked="false"
-                    android:gravity="center"
                     android:fontFamily="@font/jakarta_regular"
+                    android:gravity="center"
                     android:text="5"
                     android:textColor="@color/black" />
 
@@ -180,8 +180,8 @@
                     android:layout_weight="1"
                     android:button="@null"
                     android:checked="false"
-                    android:gravity="center"
                     android:fontFamily="@font/jakarta_regular"
+                    android:gravity="center"
                     android:text="6"
                     android:textColor="@color/black" />
 
@@ -191,8 +191,8 @@
                     android:layout_weight="1"
                     android:button="@null"
                     android:checked="false"
-                    android:gravity="center"
                     android:fontFamily="@font/jakarta_regular"
+                    android:gravity="center"
                     android:text="7"
                     android:textColor="@color/black" />
 
@@ -210,7 +210,6 @@
         android:orientation="vertical">
 
 
-
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="160dp"
@@ -219,22 +218,22 @@
             android:layout_marginEnd="8dp"
             app:cardCornerRadius="8dp">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/training_equipment" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/training_equipment" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="24dp"
-                android:text="Día 1: Rutina del día de hoy"
                 android:fontFamily="@font/jakarta_bold"
+                android:text="Día 1: Rutina del día de hoy"
                 android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
 
         </androidx.cardview.widget.CardView>
@@ -251,8 +250,8 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
-                android:backgroundTint="#FAFAFA"
                 android:background="@drawable/face_icon"
+                android:backgroundTint="#FAFAFA"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
 
@@ -268,8 +267,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="Progreso"
                         android:fontFamily="@font/jakarta_regular"
+                        android:text="Progreso"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
@@ -290,8 +289,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Racha actual"
                         android:fontFamily="@font/jakarta_regular"
+                        android:text="Racha actual"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
@@ -299,8 +298,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="0 días"
                         android:fontFamily="@font/jakarta_regular"
+                        android:text="0 días"
                         android:textColor="@color/black"
                         android:textSize="24sp"
                         android:textStyle="bold" />
@@ -310,8 +309,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp"
-                        android:text="Entrenamientos"
                         android:fontFamily="@font/jakarta_regular"
+                        android:text="Entrenamientos"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
@@ -319,8 +318,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="0"
                         android:fontFamily="@font/jakarta_regular"
+                        android:text="0"
                         android:textColor="@color/black"
                         android:textSize="24sp"
                         android:textStyle="bold" />
@@ -342,8 +341,8 @@
                 <ImageView
                     android:layout_width="32dp"
                     android:layout_height="27dp"
-                    android:layout_marginLeft="8dp"
                     android:layout_gravity="center|start"
+                    android:layout_marginLeft="8dp"
                     android:src="@drawable/heart" />
 
                 <TextView
@@ -358,7 +357,6 @@
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-
 
 
     </LinearLayout>
