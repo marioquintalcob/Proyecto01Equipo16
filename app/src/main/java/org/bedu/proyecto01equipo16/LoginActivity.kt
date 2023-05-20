@@ -41,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
                 Pair("n-diegotorres@hotmail.com", "1234"),
                 Pair("yaelramirezmendez@gmail.com", "1234"),
                 Pair("eguzmanh04@gmail.com", "1234"),
-                Pair("", "")
+                Pair("1", "1")
             )
 
             val emailIngresado = email.text.toString()
