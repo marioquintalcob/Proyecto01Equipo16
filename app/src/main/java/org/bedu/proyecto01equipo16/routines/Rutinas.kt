@@ -1,4 +1,4 @@
-package org.bedu.proyecto01equipo16
+package org.bedu.proyecto01equipo16.routines
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
+import org.bedu.proyecto01equipo16.R
+import org.bedu.proyecto01equipo16.workouts
 
 
 private lateinit var adapter: CustomAdapter
@@ -19,10 +20,6 @@ lateinit var nombreejercicio: Array<String>
 lateinit var details: Array<String>
 
 class Rutinas : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,15 +28,14 @@ class Rutinas : Fragment() {
         return inflater.inflate(R.layout.fragment_nutrition, container, false)
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         datosRutinas()
         val layoutManager = LinearLayoutManager(context)
-        recyclerView=view.findViewById(R.id.recyclerView)
+        recyclerView =view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager=layoutManager
         recyclerView.setHasFixedSize(true)
-        adapter= CustomAdapter(titlesArraylist)
+        adapter = CustomAdapter(titlesArraylist)
         recyclerView.adapter = adapter
     }
 

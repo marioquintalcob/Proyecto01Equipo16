@@ -1,28 +1,28 @@
-package org.bedu.proyecto01equipo16
+package org.bedu.proyecto01equipo16.login
 
-import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import org.bedu.proyecto01equipo16.R
+import org.bedu.proyecto01equipo16.navBar.Navbar
 
 class LoginActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         text = findViewById(R.id.txtReco)
-
         text.setOnClickListener {
             val bundle = Bundle()
-
-            val intent = Intent(this, RecopassActivity::class.java ).apply{
+            val intent = Intent(this, RecopassActivity::class.java).apply {
                 putExtras(bundle)
             }
-
             startActivity(intent)
         }
 
@@ -37,8 +37,7 @@ class LoginActivity : AppCompatActivity() {
                 Pair("mario.e.quintal.cob@hotmail.com", "1234"),
                 Pair("otro.usuario@example.com", "contrasena"),
                 Pair("usuario3@example.com", "123456"),
-                Pair("diego@gmail.com","1234"),
-                Pair("1", "1"),
+                Pair("diego@gmail.com", "1234"),
                 Pair("yaelramirezmendez@gmail.com", "1234"),
                 Pair("eguzmanh04@gmail.com", "1234"),
                 Pair("1", "1")
@@ -59,16 +58,26 @@ class LoginActivity : AppCompatActivity() {
             if (loginExitoso) {
                 // Pasa a la pantalla del Navigation Bar
                 val bundle = Bundle()
-                val intent = Intent(this, Navbar::class.java ).apply{
+                val intent = Intent(this, Navbar::class.java).apply {
                     putExtras(bundle)
                 }
                 startActivity(intent)
 
             } else {
-                Toast.makeText(this, "Datos incorrectos, favor de verificar", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Datos incorrectos, favor de verificar", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }
+
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        if (currentFocus != null) {
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+        }
+        return super.dispatchTouchEvent(ev)
+    }
+
     private lateinit var text: TextView
     private lateinit var boton: Button
     private lateinit var email: TextView
