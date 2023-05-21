@@ -33,7 +33,7 @@ class Home : Fragment() {
             }
 
             val radioButton = view.findViewById<RadioButton>(checkedId)
-            radioButton.background = ContextCompat.getDrawable(view.context, R.drawable.pink_circle_drawable)
+            radioButton.background = ContextCompat.getDrawable(view.context, R.drawable.orange_circle_drawable)
             radioButton.setTextColor(ContextCompat.getColor(view.context, R.color.white))
         }
     }
