@@ -50,10 +50,18 @@ class Rutinas : Fragment() {
             R.drawable.b,
             R.drawable.c,
             R.drawable.d,
-            R.drawable.a,
-            R.drawable.b,
-            R.drawable.c,
-            R.drawable.d,)
+            R.drawable.e,
+            R.drawable.p,
+            R.drawable.g,
+            R.drawable.h,
+            R.drawable.i,
+            R.drawable.j,
+            R.drawable.k,
+            R.drawable.l,
+            R.drawable.m,
+            R.drawable.n,
+            R.drawable.o,
+            )
 
 
         details = arrayOf(
@@ -61,21 +69,35 @@ class Rutinas : Fragment() {
             getString(R.string.titles_b),
             getString(R.string.titles_c),
             getString(R.string.titles_d),
-            getString(R.string.titles_a),
-            getString(R.string.titles_b),
-            getString(R.string.titles_c),
-            getString(R.string.titles_d),
-
+            getString(R.string.titles_e),
+            getString(R.string.titles_p),
+            getString(R.string.titles_g),
+            getString(R.string.titles_h),
+            getString(R.string.titles_i),
+            getString(R.string.titles_j),
+            getString(R.string.titles_k),
+            getString(R.string.titles_l),
+            getString(R.string.titles_m),
+            getString(R.string.titles_n),
+            getString(R.string.titles_o),
+            getString(R.string.titles_p),
         )
         nombreejercicio = arrayOf(
             getString(R.string.details_a),
             getString(R.string.details_b),
             getString(R.string.details_c),
             getString(R.string.details_d),
-                    getString(R.string.details_a),
-            getString(R.string.details_b),
-            getString(R.string.details_c),
-            getString(R.string.details_d),
+                    getString(R.string.details_p),
+            getString(R.string.details_f),
+            getString(R.string.details_g),
+            getString(R.string.details_h),
+            getString(R.string.details_i),
+            getString(R.string.details_j),
+            getString(R.string.details_k),
+            getString(R.string.details_l),
+            getString(R.string.details_m),
+            getString(R.string.details_n),
+            getString(R.string.details_o),
         )
 
         for(i in imagenejercicio.indices){

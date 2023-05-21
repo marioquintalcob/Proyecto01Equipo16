@@ -18,11 +18,36 @@
     <string name="titles_b">Planchas</string>
     <string name="titles_c">Jumping Jacks</string>
     <string name="titles_d">Abdominales</string>
+    <string name="titles_e">Press de banca</string>
+    <string name="titles_p">Fondos</string>
+    <string name="titles_g">Kettlebells</string>
+    <string name="titles_h">Desplantes</string>
+    <string name="titles_i">Caminadora</string>
+    <string name="titles_j">Escaladores</string>
+    <string name="titles_k">Puentes</string>
+    <string name="titles_l">Skippings</string>
+    <string name="titles_m">Jump squats</string>
+    <string name="titles_n">Bicicleta fija</string>
+    <string name="titles_o">Tocar tobillos</string>
     <!-- Workouts details -->
     <string name="details_a">2 series x 15 reps</string>
     <string name="details_b">2 series x 15 reps</string>
     <string name="details_c">2 series x 15 reps</string>
     <string name="details_d">2 series x 15 reps</string>
+    <string name="details_p">4 series x 15 reps</string>
+    <string name="details_f">4 series x 15 reps</string>
+    <string name="details_g">4 series x 15 reps</string>
+    <string name="details_h">4 series x 15 reps</string>
+    <string name="details_i">25 minutos</string>
+    <string name="details_j">2 series x 25 reps</string>
+    <string name="details_k">2 series x 25 reps</string>
+    <string name="details_l">2 series x 25 reps</string>
+    <string name="details_m">5 series x 10 reps</string>
+    <string name="details_n">20 minutos</string>
+    <string name="details_o">5 series x 10 reps</string>
+    <string name="details_q">5 series x 10 reps</string>
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
