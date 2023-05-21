@@ -33,7 +33,6 @@ class Profile : Fragment() {
 
 
         }
-        ivRegresar =
     }
 
     override fun onCreateView(
