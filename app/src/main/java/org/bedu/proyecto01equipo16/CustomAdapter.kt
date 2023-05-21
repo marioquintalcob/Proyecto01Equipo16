@@ -18,6 +18,7 @@ class CustomAdapter(private val titles:ArrayList<workouts>): RecyclerView.Adapte
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
         val currentItem = titles[i]
         viewHolder.tvHeading.text = details[i]
+        viewHolder.title.text = nombreejercicio[i]
         viewHolder.titleImage.setImageResource(imagenejercicio[i])
     }
     override fun getItemCount(): Int{
@@ -26,5 +27,6 @@ class CustomAdapter(private val titles:ArrayList<workouts>): RecyclerView.Adapte
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         var titleImage : ShapeableImageView = itemView.findViewById(R.id.title_image)
         val tvHeading : TextView = itemView.findViewById(R.id.tvHeading)
+        val title : TextView = itemView.findViewById(R.id.title)
         }
     }
