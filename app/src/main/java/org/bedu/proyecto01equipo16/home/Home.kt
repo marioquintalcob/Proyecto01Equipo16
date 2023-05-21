@@ -1,4 +1,4 @@
-package org.bedu.proyecto01equipo16
+package org.bedu.proyecto01equipo16.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.RadioButton
 import androidx.core.content.ContextCompat
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
+import org.bedu.proyecto01equipo16.R
 import org.bedu.proyecto01equipo16.databinding.FragmentHomeBinding
 
 class Home : Fragment() {

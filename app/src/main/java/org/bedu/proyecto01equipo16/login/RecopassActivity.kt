@@ -1,11 +1,12 @@
-package org.bedu.proyecto01equipo16
+package org.bedu.proyecto01equipo16.login
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import org.bedu.proyecto01equipo16.R
 
 class RecopassActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +18,12 @@ class RecopassActivity : AppCompatActivity() {
         email = findViewById(R.id.txtEmail2)
 
         boton.setOnClickListener {
-            val emails = listOf("mario.e.quintal.cob@hotmail.com", "n-diegotorres@hotmail.com", "yaelramirezmendez@gmail.com", "eguzmanh04@gmail.com" )
+            val emails = listOf(
+                "mario.e.quintal.cob@hotmail.com",
+                "n-diegotorres@hotmail.com",
+                "yaelramirezmendez@gmail.com",
+                "eguzmanh04@gmail.com"
+            )
 
             val emailIngresado = email.text.toString()
 
@@ -32,18 +38,20 @@ class RecopassActivity : AppCompatActivity() {
 
             if (emailExistente) {
                 val bundle = Bundle()
-                val intent = Intent(this, SendpassActivity::class.java ).apply{
+                val intent = Intent(this, SendpassActivity::class.java).apply {
                     putExtras(bundle)
                 }
                 startActivity(intent)
 
             } else {
-                Toast.makeText(this, "Correo no registrado, favor de verificar", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Correo no registrado, favor de verificar", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
 
 
     }
+
     private lateinit var boton: Button
     private lateinit var email: TextView
 }

@@ -22,19 +22,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SendpassActivity"
+            android:name=".login.SendpassActivity"
             android:exported="false" />
         <activity
-            android:name=".Navbar"
+            android:name=".navBar.Navbar"
             android:exported="false" />
         <activity
-            android:name=".RecopassActivity"
+            android:name=".login.RecopassActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".login.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".login.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

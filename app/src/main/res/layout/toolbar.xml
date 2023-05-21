@@ -15,6 +15,7 @@
         <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
+            android:visibility="invisible"
             android:src="@drawable/ic_back"
             android:layout_alignParentRight="true"/>
         <TextView
@@ -28,6 +29,7 @@
             android:textStyle="bold"
             android:textColor="@color/black" />
         <TextView
+            android:id="@+id/text_view_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Logout"
