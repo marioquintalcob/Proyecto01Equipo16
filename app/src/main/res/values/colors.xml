@@ -7,4 +7,5 @@
     <color name="background">#FAFAFA</color>
     <color name="darkgray">#808080</color>
     <color name="gray">#adb5bd</color>
+    <color name="azullink">#0000FF</color>
 </resources>

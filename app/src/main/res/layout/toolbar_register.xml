@@ -22,30 +22,19 @@
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Account Settings"
+            android:text="Registrate en Gymso"
             android:fontFamily="@font/jakarta_regular"
             android:textSize="16dp"
             android:gravity="center"
             android:layout_marginTop="6dp"
             android:textStyle="bold"
             android:textColor="@color/black" />
-        <TextView
-            android:id="@+id/text_view_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:text="Logout"
-            android:fontFamily="@font/jakarta_regular"
-            android:textColor="@color/orange"
-            android:layout_alignParentRight="true"
-            android:textStyle="normal"
-            android:textSize="16dp"/>
 
-        
-</LinearLayout>
+
+    </LinearLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
+        android:layout_height="2dp"
         android:background="@color/orange"
         android:layout_below="@+id/linear_ll"
         android:paddingRight="8dp"

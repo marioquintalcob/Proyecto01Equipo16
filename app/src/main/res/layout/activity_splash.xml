@@ -19,8 +19,8 @@
         android:id="@+id/progress_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:indeterminate="true"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_marginStart="70dp"
         android:layout_marginEnd="70dp"
         android:layout_below="@+id/muscle_logo"
@@ -28,6 +28,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/muscle_logo"
         app:layout_constraintVertical_bias="0.052"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="10dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:fontFamily="@font/jakarta_bold"
+        android:textSize="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/muscle_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.948" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

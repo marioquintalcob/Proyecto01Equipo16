@@ -64,7 +64,7 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(intent)
 
             } else {
-                Toast.makeText(this, "Datos incorrectos, favor de verificar", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "⚠️Datos incorrectos, favor de verificar", Toast.LENGTH_SHORT)
                     .show()
             }
         }
