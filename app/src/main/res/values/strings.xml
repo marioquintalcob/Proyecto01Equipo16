@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Proyecto01Equipo16</string>
+    <string name="app_name">Gymso</string>
     <string name="botonLogin">Iniciar Sesión</string>
     <string name="botonRegistro">Registrarme</string>
-    <string name="olvidoContrasena">olvidé mi contraseña</string>
+    <string name="olvidoContrasena">¿Olvidaste tu contraseña?</string>
     <string name="recuperar1">Ingresa el email con el que creaste tu cuenta</string>
     <string name="recuperar2">Recuperar contraseña</string>
     <string name="enviado">Revisa tu bandeja de entrada. Te enviamos un correo electrónico con las instrucciones para restablecer tu contraseña.</string>
@@ -10,8 +10,9 @@
     <string name="logo">logo</string>
     <string name="registrese">Regístrese para guardar su evolución.</string>
     <string name="inicia">INICIA SESIÓN CON TU CUENTA</string>
-    <string name="google">CONTINUAR CON GOOGLE</string>
-    <string name="facebook">CONTINUAR CON FACEBOOK</string>
+    <string name="google">Registrarse con Google</string>
+    <string name="facebook">Registrarse con Facebook</string>
+    <string name="tuemail">Registrarse con un email</string>
     <string name="terminos">Al continuar, acepta nuestros Términos de uso y Políticas de privacidad.</string>
     <!-- Workouts names -->
     <string name="titles_a">Sentadillas</string>

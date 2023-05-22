@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import org.bedu.proyecto01equipo16.MainActivity
 import org.bedu.proyecto01equipo16.databinding.FragmentProfileBinding
 import org.bedu.proyecto01equipo16.login.LoginActivity
 
@@ -28,7 +29,7 @@ class Profile : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.toolbar.textViewLogout.setOnClickListener {
-            startActivity(Intent(activity, LoginActivity::class.java))
+            startActivity(Intent(activity, MainActivity::class.java))
         }
     }
 }
