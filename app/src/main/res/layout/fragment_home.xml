@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Home">
+    tools:context=".home.Home">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -122,7 +122,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/pink_circle_drawable"
+                    android:background="@drawable/orange_circle_drawable"
                     android:button="@null"
                     android:checked="true"
                     android:fontFamily="@font/jakarta_regular"
@@ -269,6 +269,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/jakarta_regular"
                         android:text="Progreso"
+                        android:textStyle="bold"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
@@ -301,7 +302,7 @@
                         android:fontFamily="@font/jakarta_regular"
                         android:text="0 días"
                         android:textColor="@color/black"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -321,7 +322,7 @@
                         android:fontFamily="@font/jakarta_regular"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="24sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -339,11 +340,11 @@
                 app:cardElevation="8dp">
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="27dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:layout_gravity="center|start"
-                    android:layout_marginLeft="8dp"
-                    android:src="@drawable/heart" />
+                    android:layout_marginLeft="16dp"
+                    android:src="@drawable/like_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"

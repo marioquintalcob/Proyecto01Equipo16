@@ -1,6 +1,8 @@
-package org.bedu.proyecto01equipo16.comunity
+package org.bedu.proyecto01equipo16.news
 
-class ComunityProvider {
+import org.bedu.proyecto01equipo16.news.model.Articulos
+
+class NewsProvider {
     companion object{
         val articulosList = listOf<Articulos>(
             Articulos("Giros rusos: qué son y cómo hacerlos",

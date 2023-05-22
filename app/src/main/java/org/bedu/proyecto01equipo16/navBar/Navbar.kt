@@ -1,8 +1,13 @@
-package org.bedu.proyecto01equipo16
+package org.bedu.proyecto01equipo16.navBar
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import org.bedu.proyecto01equipo16.news.News
+import org.bedu.proyecto01equipo16.home.Home
+import org.bedu.proyecto01equipo16.profile.Profile
+import org.bedu.proyecto01equipo16.R
+import org.bedu.proyecto01equipo16.routines.Rutinas
 import org.bedu.proyecto01equipo16.databinding.ActivityNavbarBinding
 
 class Navbar : AppCompatActivity() {
@@ -20,7 +25,7 @@ class Navbar : AppCompatActivity() {
             when (it.itemId){
 
                 R.id.home -> replaceFragment(Home())
-                R.id.comunidad -> replaceFragment(Comunity())
+                R.id.comunidad -> replaceFragment(News())
                 R.id.rutinas -> replaceFragment(Rutinas())
                 R.id.perfil -> replaceFragment(Profile())
 

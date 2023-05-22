@@ -1,4 +1,4 @@
-package org.bedu.proyecto01equipo16.comunity
+package org.bedu.proyecto01equipo16.news.model
 
 data class Articulos(
     val titulo:String,

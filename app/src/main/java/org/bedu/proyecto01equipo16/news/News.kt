@@ -1,4 +1,4 @@
-package org.bedu.proyecto01equipo16
+package org.bedu.proyecto01equipo16.news
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,10 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import org.bedu.proyecto01equipo16.comunity.ComunityAdapter
-import org.bedu.proyecto01equipo16.comunity.ComunityProvider
+import org.bedu.proyecto01equipo16.R
 
-class Comunity : Fragment() {
+class News : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,15 +22,15 @@ class Comunity : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_comunity, container, false)
+        return inflater.inflate(R.layout.fragment_news, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // Muestra el contenido del Recyclerview en el fragment Comunity
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerComunity)
+        // Muestra el contenido del Recyclerview en el fragment News
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerNews)
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = ComunityAdapter(ComunityProvider.articulosList)
+        recyclerView.adapter = NewsAdapter(NewsProvider.articulosList)
     }
 
 }

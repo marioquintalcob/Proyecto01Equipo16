@@ -1,4 +1,4 @@
-package org.bedu.proyecto01equipo16.comunity
+package org.bedu.proyecto01equipo16.news
 
 import android.view.View
 import android.widget.ImageView
@@ -6,8 +6,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import org.bedu.proyecto01equipo16.R
+import org.bedu.proyecto01equipo16.news.model.Articulos
 
-class ComunityViewHolder(view: View):RecyclerView.ViewHolder(view){
+class NewsViewHolder(view: View):RecyclerView.ViewHolder(view){
 
     val titulo = view.findViewById<TextView>(R.id.comunityTitle)
     val texto = view.findViewById<TextView>(R.id.comunityTexto)
