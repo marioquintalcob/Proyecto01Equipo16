@@ -872,7 +872,8 @@ class Navbar : AppCompatActivity() {
 }
 ```
 
-![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/c82ba02d-83ee-43c8-8ca8-428eb66b9c6d)
+![1684805274404](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/e1e313b0-85b7-4297-8a53-e81dc5e6c290)
+
 
 ### Sesión 7
 ***
