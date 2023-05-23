@@ -820,53 +820,47 @@ El cual se carga de la siguiente forma en el tema a utilizar en nuestro proyecto
 Las CardViews se implementaron en el Home:
 ```kotlin
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.RadioButton
+import androidx.core.content.ContextCompat
+import androidx.core.view.children
 import androidx.fragment.app.Fragment
-import org.bedu.proyecto01equipo16.news.News
-import org.bedu.proyecto01equipo16.home.Home
-import org.bedu.proyecto01equipo16.profile.Profile
 import org.bedu.proyecto01equipo16.R
-import org.bedu.proyecto01equipo16.routines.Rutinas
-import org.bedu.proyecto01equipo16.databinding.ActivityNavbarBinding
+import org.bedu.proyecto01equipo16.databinding.FragmentHomeBinding
 
-class Navbar : AppCompatActivity() {
+class Home : Fragment() {
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
 
-    private lateinit var binding: ActivityNavbarBinding
-
-    override fun onCreate(savedInstanceState: Bundle?){
-        super.onCreate(savedInstanceState)
-        binding = ActivityNavbarBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        replaceFragment(Home())
-
-        binding.bottomNavigationView.setOnItemSelectedListener {
-
-            when (it.itemId){
-
-                R.id.home -> replaceFragment(Home())
-                R.id.comunidad -> replaceFragment(News())
-                R.id.rutinas -> replaceFragment(Rutinas())
-                R.id.perfil -> replaceFragment(Profile())
-
-                else -> {
-
-
-                }
-
-            }
-            true
-
-        }
-
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    private fun replaceFragment(fragment: Fragment){
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.homeRadioGroup.setOnCheckedChangeListener { group, checkedId ->
+            for (viewE in group.children) {
+                val radio = viewE as RadioButton
+                radio.setBackgroundColor(ContextCompat.getColor(view.context, R.color.white))
+                radio.setTextColor(ContextCompat.getColor(view.context, R.color.black))
+            }
 
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout, fragment)
-        fragmentTransaction.commit()
+            val radioButton = view.findViewById<RadioButton>(checkedId)
+            radioButton.background = ContextCompat.getDrawable(view.context, R.drawable.orange_circle_drawable)
+            radioButton.setTextColor(ContextCompat.getColor(view.context, R.color.white))
+        }
+    }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }
