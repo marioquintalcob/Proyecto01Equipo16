@@ -8,9 +8,9 @@ información nutrimental, noticias acerca de deportes, etc.
 
 ### Alcance del Proyecto
 ***
-La finalidad de este proyecto es demostrar los conocimientos adquiridos durante el módulo III de Desarrollo Movil,
+La finalidad de este proyecto es demostrar los conocimientos adquiridos durante el módulo II Kotlin Intermedio de Desarrollo Movil,
 tomando la idea de un integrante del equipo y la desarrollamos basándonos en el lenguaje kotlin y a los conceptos aprendidos
-durante cada sesión de la fase 3.
+durante cada sesión de la fase 2.
 
 ***Nota importante:*** durante el desarrollo del proyecto algunas partes del código tuvieron cambios significativos para poder
 implementar temas que se vieron a lo largo del módulo.
@@ -817,149 +817,61 @@ El cual se carga de la siguiente forma en el tema a utilizar en nuestro proyecto
     <style name="Theme.Proyecto01Equipo16" parent="Base.Theme.Proyecto01Equipo16" />
 </resources>
 ```
-Tambien se implemento el uso de Cardviews, utilizando un adaptador y su recyclerview para su correcto funcionamiento:
+Las CardViews se implementaron en el Home:
 ```kotlin
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import org.bedu.proyecto01equipo16.news.News
+import org.bedu.proyecto01equipo16.home.Home
+import org.bedu.proyecto01equipo16.profile.Profile
 import org.bedu.proyecto01equipo16.R
-import org.bedu.proyecto01equipo16.workouts
+import org.bedu.proyecto01equipo16.routines.Rutinas
+import org.bedu.proyecto01equipo16.databinding.ActivityNavbarBinding
+
+class Navbar : AppCompatActivity() {
+
+    private lateinit var binding: ActivityNavbarBinding
+
+    override fun onCreate(savedInstanceState: Bundle?){
+        super.onCreate(savedInstanceState)
+        binding = ActivityNavbarBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        replaceFragment(Home())
+
+        binding.bottomNavigationView.setOnItemSelectedListener {
+
+            when (it.itemId){
+
+                R.id.home -> replaceFragment(Home())
+                R.id.comunidad -> replaceFragment(News())
+                R.id.rutinas -> replaceFragment(Rutinas())
+                R.id.perfil -> replaceFragment(Profile())
+
+                else -> {
 
 
-private lateinit var adapter: CustomAdapter
-private lateinit var recyclerView: RecyclerView
-private lateinit var titlesArraylist: ArrayList<workouts>
+                }
 
-lateinit var imagenejercicio: Array<Int>
-lateinit var nombreejercicio: Array<String>
-lateinit var details: Array<String>
+            }
+            true
 
-class Rutinas : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_routines, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        datosRutinas()
-        val layoutManager = LinearLayoutManager(context)
-        recyclerView =view.findViewById(R.id.recyclerView)
-        recyclerView.layoutManager=layoutManager
-        recyclerView.setHasFixedSize(true)
-        adapter = CustomAdapter(titlesArraylist)
-        recyclerView.adapter = adapter
-    }
-
-    private fun datosRutinas(){
-       titlesArraylist = arrayListOf<workouts>()
-        imagenejercicio = arrayOf(
-            R.drawable.a,
-            R.drawable.b,
-            R.drawable.c,
-            R.drawable.d,
-            R.drawable.e,
-            R.drawable.p,
-            R.drawable.g,
-            R.drawable.h,
-            R.drawable.i,
-            R.drawable.j,
-            R.drawable.k,
-            R.drawable.l,
-            R.drawable.m,
-            R.drawable.n,
-            R.drawable.o,
-            )
-
-
-        details = arrayOf(
-            getString(R.string.titles_a),
-            getString(R.string.titles_b),
-            getString(R.string.titles_c),
-            getString(R.string.titles_d),
-            getString(R.string.titles_e),
-            getString(R.string.titles_p),
-            getString(R.string.titles_g),
-            getString(R.string.titles_h),
-            getString(R.string.titles_i),
-            getString(R.string.titles_j),
-            getString(R.string.titles_k),
-            getString(R.string.titles_l),
-            getString(R.string.titles_m),
-            getString(R.string.titles_n),
-            getString(R.string.titles_o),
-            getString(R.string.titles_p),
-        )
-        nombreejercicio = arrayOf(
-            getString(R.string.details_a),
-            getString(R.string.details_b),
-            getString(R.string.details_c),
-            getString(R.string.details_d),
-                    getString(R.string.details_p),
-            getString(R.string.details_f),
-            getString(R.string.details_g),
-            getString(R.string.details_h),
-            getString(R.string.details_i),
-            getString(R.string.details_j),
-            getString(R.string.details_k),
-            getString(R.string.details_l),
-            getString(R.string.details_m),
-            getString(R.string.details_n),
-            getString(R.string.details_o),
-        )
-
-        for(i in imagenejercicio.indices){
-            val details = workouts(nombreejercicio[i], details[i])
-            titlesArraylist.add(details)
         }
+
     }
+
+    private fun replaceFragment(fragment: Fragment){
+
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.frame_layout, fragment)
+        fragmentTransaction.commit()
+
+    }
+
 }
 ```
-Adaptador:
-```kotlin
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.imageview.ShapeableImageView
-import org.bedu.proyecto01equipo16.R
-import org.bedu.proyecto01equipo16.workouts
 
-class CustomAdapter(private val titles: ArrayList<workouts>) :
-    RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
-
-    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
-        val v =
-            LayoutInflater.from(viewGroup.context).inflate(R.layout.card_layout, viewGroup, false)
-        return ViewHolder(v)
-    }
-
-    override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
-        val currentItem = titles[i]
-        viewHolder.tvHeading.text = details[i]
-        viewHolder.title.text = nombreejercicio[i]
-        viewHolder.titleImage.setImageResource(imagenejercicio[i])
-    }
-
-    override fun getItemCount(): Int {
-        return titles.size
-    }
-
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var titleImage: ShapeableImageView = itemView.findViewById(R.id.title_image)
-        val tvHeading: TextView = itemView.findViewById(R.id.tvHeading)
-        val title: TextView = itemView.findViewById(R.id.title)
-    }
-}
-```
 ![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/c82ba02d-83ee-43c8-8ca8-428eb66b9c6d)
 
 ### Sesión 7
@@ -1002,21 +914,22 @@ El menu utilizado en nuestra aplicación, se encuentra en la parte inferior:
 **Gradle y Preparación para lanzamiento**
 
 En esta sesion vimos la informacion relacionada con configurar gradle para el lanzamiento, las Build variants que son diferentes versiones de una aplicación y la Firma de aplicacion que es
-generar un apk de prueba, para instalarlo en un dispositivo, compilando un archivo .aab y probando su funcionalidad mediante buildtool para que finalmente se firme la aplicación de release
-y se pueda testear en búsqueda de algún defecto.
+generar un apk de prueba, para instalarlo en un dispositivo, compilando un archivo .aab y probando su funcionalidad mediante buildtool para que finalmente se firme la aplicación de release y se pueda testear en búsqueda de algún defecto.
 
-```kotlin
-Implementacion de Gradle y Preparación para lanzamiento en nuestro proyecto.
-```
-**Configuración de gradle**
-```kotlin
-Configuración de gradle en nuestro proyecto.
-```
 **Build variants**
+
+En el build.gradle (:app) se implemento lo siguiente:
 ```kotlin
-Build variants en nuestro proyecto.
-```
-**Firma de aplicación**
-```kotlin
-Firma de aplicación en nuestro proyecto.
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
 ```
