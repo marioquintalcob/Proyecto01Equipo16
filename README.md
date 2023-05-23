@@ -1,5 +1,5 @@
-# Fase III Desarrollo móvil - Kotlin Intermedio
-## Proyecto: aplicación para seguir progresos en el Gimnasio / de Ejercicios
+# Fase II Desarrollo móvil - Modulo 2 Kotlin Intermedio
+## Proyecto: aplicación para seguir progresos en el Gimnasio / de Ejercicios GYMSO
 
 ### Definición del Proyecto
 ***
@@ -8,9 +8,9 @@ información nutrimental, noticias acerca de deportes, etc.
 
 ### Alcance del Proyecto
 ***
-La finalidad de este proyecto es demostrar los conocimientos adquiridos durante el módulo III de Desarrollo Movil,
+La finalidad de este proyecto es demostrar los conocimientos adquiridos durante el módulo II Kotlin Intermedio de Desarrollo Movil,
 tomando la idea de un integrante del equipo y la desarrollamos basándonos en el lenguaje kotlin y a los conceptos aprendidos
-durante cada sesión de la fase 3.
+durante cada sesión de la fase 2.
 
 ***Nota importante:*** durante el desarrollo del proyecto algunas partes del código tuvieron cambios significativos para poder
 implementar temas que se vieron a lo largo del módulo.
@@ -70,6 +70,8 @@ boton.setOnClickListener {
             }
         }
 ```
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/bc1befb7-b8a2-4cb0-88f2-c70e9b502f9e)
+
 ### Sesión 2
 ***
 **Views**
@@ -79,6 +81,8 @@ mejor a las problematicas de nuestro proyecto.
 
 Por ejemplo, en el siguiente layout que es el inicial utilizamos un ImageView y dos botones los cuales envian a otro, dependiendo de la opción que eligió, 
 ya sea registrarse o iniciar sesion.
+
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/86c0fdc1-9647-43bd-8856-91efddb7550d)
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -277,90 +281,177 @@ Si el usuario elige iniciar sesion es enviado a esta pantalla:
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-Y si elige registrase es enviado a esta pantalla donde, cuando la funcionalidad este completa podra utilizar sus credenciales de Facebook o Gmail para completar dicho registro:
+Y si elige registrase es enviado a esta pantalla donde se le piden sus datos para completar dicho registro:
+
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/5ade67f3-2671-49a0-bd4b-74ab1ab1bd48)
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".login.RegisterActivity">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="235dp"
-        android:layout_height="71dp"
-        android:text="@string/registrese"
-        android:textAlignment="center"
-        android:fontFamily="@font/sf_regular"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/orange"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.219" />
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_register"/>
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/inicia"
-        android:fontFamily="@font/sf_regular"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.428" />
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@color/orange"
+        >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/add_perfil" />
+
+        <TextView
+            android:id="@+id/text_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jakarta_regular"
+            android:text="Nombre de usuario"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/orange" />
+    </LinearLayout>
+
+    <!-- Label Datos generales -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_profile" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:fontFamily="@font/jakarta_regular"
+            android:text="Completa tu registro"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+        </LinearLayout>
+
+    <!-- Input Nombre -->
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:hint="Nombre y Apellidos">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+    <!-- Input Teléfono -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:hint="Telefono">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!-- Input Correo -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:hint="Correo electrónico">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Input Contraseña -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:hint="Contraseña"
+        android:inputType="textPassword">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Input Confirmar contraseña -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:hint="Confirmar contraseña">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:id="@+id/botonregistrar"
+        android:layout_width="169dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="100dp"
         android:backgroundTint="@color/orange"
-        android:drawableLeft="@drawable/google_small"
-        android:fontFamily="@font/sf_regular"
-        android:text="@string/google"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.512" />
+        android:drawableLeft="@drawable/save_ic_white"
+        android:fontFamily="@font/jakarta_regular"
+        android:text="Crear cuenta"
+        android:textColor="@color/white" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/orange"
-        android:drawableLeft="@drawable/facebook_small"
-        android:fontFamily="@font/sf_regular"
-        android:text="@string/facebook"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.644" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="342dp"
-        android:layout_height="37dp"
-        android:fontFamily="@font/sf_regular"
-        android:text="@string/terminos"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.949" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
 ```
 
 ### Sesión 3
@@ -434,6 +525,8 @@ El siguiente Layout que utiliza constraints es el que visualiza el usuario cuand
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/1cf3bee7-50bf-456f-a536-8dbdb0813e0f)
+
 **Activity**
 
 La navegación entre Activities es gestionada por un stack de Activities. Al correrse una nueva Activity, esta es puesta hasta la parte superior del stack y se mantiene ahí hasta que uno nuevo se manda a primer plano, dejando al anterior abajo de él.
@@ -482,15 +575,109 @@ En esta sesion aprendimos como se establece el código que desplega listas scrol
 a utilizar layouts personalizados para darles estilo.
 
 ```kotlin
-ejemplo de lista en el proyecto.
+class NewsProvider {
+    companion object{
+        val articulosList = listOf<Articulos>(
+            Articulos("Giros rusos: qué son y cómo hacerlos",
+            "Los giros rusos consisten en girar el torso, llevando de un lado a otro las manos y sin mover las piernas.",
+            "Saber más...",
+            "https://t1.uc.ltmcdn.com/es/posts/6/7/1/giros_rusos_que_son_y_como_hacerlos_53176_300_square.webp"
+            ),
+            Articulos("Ejercicios para quemar grasa abdominal",
+                "Para descubrir los mejores ejercicios para quemar grasa abdominal te recomendamos que sigas leyendo este artículo.",
+                "Saber más...",
+                "https://t2.uc.ltmcdn.com/es/posts/6/1/0/ejercicios_para_quemar_grasa_abdominal_53016_300_square.webp"
+            ),
+            Articulos("Cómo hacer peso muerto",
+                "Si estás decidido a tener una rutina de ejercicio e incluir el peso muerto, debes saber que se trata de una práctica muy completa pero que debe realizarse correctamente para evitar lesiones.",
+                "Saber más...",
+                "https://t2.uc.ltmcdn.com/es/posts/2/6/7/como_hacer_peso_muerto_51762_600.webp"
+            ),
+            Articulos("Cómo hacer press de banca",
+                "Para poder hacer el press de banco correctamente, necesitarás una superficie donde poder apoyar toda la zona de la espalda y la cabeza.",
+                "Saber más...",
+                "https://t1.uc.ltmcdn.com/es/posts/1/0/7/como_hacer_press_de_banca_51701_600.webp"
+            ),
+            Articulos("Cómo hacer remo con barra",
+                "Este ejercicio no requiere de mucha preparación previa y su ejecución podría recordar a la del peso muerto.",
+                "Saber más...",
+                "https://t2.uc.ltmcdn.com/es/posts/2/8/6/como_hacer_remo_con_barra_51682_600.webp"
+            ),
+            Articulos("Beneficios de hacer lagartijas",
+                "Las lagartijas son ejercicios muy prácticos que se pueden realizar en casa sin más herramientas que nuestro propio cuerpo y una superficie plana.",
+                "Saber más...",
+                "https://t2.uc.ltmcdn.com/es/posts/9/3/7/beneficios_de_hacer_lagartijas_50739_600.webp"
+            ),
+            Articulos("Ejercicios para bíceps y tríceps",
+                "Para ganar masa y resistencia muscular en los brazos te traemos los mejores ejercicios para bíceps y tríceps.",
+                "Saber más...",
+                "https://t1.uc.ltmcdn.com/es/posts/9/6/2/ejercicios_para_biceps_y_triceps_50269_600.webp"
+            ),
+            Articulos("Ejercicios para fortalecer la espalda",
+                "La espalda es una de las regiones del cuerpo más importantes, pues se compone de huesos, músculos y otros tejidos que van desde el cuello hasta la cintura pélvica",
+                "Saber más...",
+                "https://t2.uc.ltmcdn.com/es/posts/1/8/5/ejercicios_para_fortalecer_la_espalda_49581_600.webp"
+            ),
+        )
+    }
+}
 ```
 
 En las siguientes clases podemos observar como se implementa en el proyecto un RecyclerView el cual es una mejora de los ListAdapters, reciclando Views y métodos para ahorrar recursos.
 En este ejemplo creamos uno desde cero, incluyendo su Adapter.
 
+Adapter
 ```kotlin
-ejemplo de RecyclerView en el proyecto.
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import org.bedu.proyecto01equipo16.R
+import org.bedu.proyecto01equipo16.news.model.Articulos
+
+class NewsAdapter(private val comunityList:List<Articulos>) : RecyclerView.Adapter<NewsViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
+        val layoutInflater = LayoutInflater.from(parent.context)
+        return NewsViewHolder(layoutInflater.inflate(R.layout.card_news, parent, false))
+    }
+
+    override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
+        val item = comunityList[position]
+        holder.render(item)
+    }
+
+    override fun getItemCount(): Int = comunityList.size
+
+}
 ```
+
+ViewHolder
+```kotlin
+import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import org.bedu.proyecto01equipo16.R
+import org.bedu.proyecto01equipo16.news.model.Articulos
+
+class NewsViewHolder(view: View):RecyclerView.ViewHolder(view){
+
+    val titulo = view.findViewById<TextView>(R.id.comunityTitle)
+    val texto = view.findViewById<TextView>(R.id.comunityTexto)
+    val url = view.findViewById<TextView>(R.id.comunityURL)
+    val foto = view.findViewById<ImageView>(R.id.comunityImg)
+
+    fun render(comunityModel: Articulos){
+        titulo.text = comunityModel.titulo
+        texto.text = comunityModel.descripcion
+        url.text = comunityModel.url
+        Glide.with(foto.context).load(comunityModel.foto).into(foto)
+    }
+
+}
+```
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/19f89b13-39b0-4cd4-b173-fc6179e418b4)
+
 ### Sesión 5
 **Fragments**
 
@@ -556,7 +743,54 @@ class Navbar : AppCompatActivity() {
 
 }
 ```
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/1a5bdf57-08e3-47cc-aa35-a63f0a200988)
 
+Siguiendo con el tema de fragments, el siguiente se implemento para el uso de un recyclerview:
+```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f1c15d"
+    tools:context=".routines.Rutinas">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Routines Fragment"
+        android:textSize="26dp"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="36dp"
+        android:text="EJERCICIOS"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/card_layout"
+        />
+
+</FrameLayout>
+```
 ### Sesión 6
 ***
 **Material Design**
@@ -583,35 +817,114 @@ El cual se carga de la siguiente forma en el tema a utilizar en nuestro proyecto
     <style name="Theme.Proyecto01Equipo16" parent="Base.Theme.Proyecto01Equipo16" />
 </resources>
 ```
+Las CardViews se implementaron en el Home:
+```kotlin
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.RadioButton
+import androidx.core.content.ContextCompat
+import androidx.core.view.children
+import androidx.fragment.app.Fragment
+import org.bedu.proyecto01equipo16.R
+import org.bedu.proyecto01equipo16.databinding.FragmentHomeBinding
+
+class Home : Fragment() {
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.homeRadioGroup.setOnCheckedChangeListener { group, checkedId ->
+            for (viewE in group.children) {
+                val radio = viewE as RadioButton
+                radio.setBackgroundColor(ContextCompat.getColor(view.context, R.color.white))
+                radio.setTextColor(ContextCompat.getColor(view.context, R.color.black))
+            }
+
+            val radioButton = view.findViewById<RadioButton>(checkedId)
+            radioButton.background = ContextCompat.getDrawable(view.context, R.drawable.orange_circle_drawable)
+            radioButton.setTextColor(ContextCompat.getColor(view.context, R.color.white))
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+}
+```
+
+![1684805274404](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/e1e313b0-85b7-4297-8a53-e81dc5e6c290)
+
+
 ### Sesión 7
 ***
 **Menús**
 
 En esta sesion vimos lo relacionado a los menús. En Android existen tres tipos de menú, Popup, contextual y de opciones. Cada menú debe tener un archivo XML relacionado a él, este definirá su Layout.
 Así como hemos visto en las clases, el elemento correspondiente a un menú en XML será <menu…/> y sus elementos internos serán <items…./>.
-```kotlin
-Implementacion de menus en nuestro proyecto.
+
+El menu utilizado en nuestra aplicación, se encuentra en la parte inferior:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Inicio"
+        android:id="@+id/home"
+        android:fontFamily="@font/jakarta_regular"
+        android:icon="@drawable/ic_home"
+        />
+    <item android:title="News"
+        android:id="@+id/comunidad"
+        android:fontFamily="@font/jakarta_regular"
+        android:icon="@drawable/news_icon"
+        />
+    <item
+        android:id="@+id/rutinas"
+        android:icon="@drawable/gym_icon"
+        android:title="Rutinas" />
+
+    <item android:title="Perfil"
+        android:id="@+id/perfil"
+        android:icon="@drawable/user_icon"
+        />
+</menu>
 ```
+[device-2023-05-22-120033.webm](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/e1800041-07ae-4af5-b9f8-a55f9c542dd5)
+
 ### Sesión 8
 ***
 **Gradle y Preparación para lanzamiento**
 
 En esta sesion vimos la informacion relacionada con configurar gradle para el lanzamiento, las Build variants que son diferentes versiones de una aplicación y la Firma de aplicacion que es
-generar un apk de prueba, para instalarlo en un dispositivo, compilando un archivo .aab y probando su funcionalidad mediante buildtool para que finalmente se firme la aplicación de release
-y se pueda testear en búsqueda de algún defecto.
+generar un apk de prueba, para instalarlo en un dispositivo, compilando un archivo .aab y probando su funcionalidad mediante buildtool para que finalmente se firme la aplicación de release y se pueda testear en búsqueda de algún defecto.
 
-```kotlin
-Implementacion de Gradle y Preparación para lanzamiento en nuestro proyecto.
-```
-**Configuración de gradle**
-```kotlin
-Configuración de gradle en nuestro proyecto.
-```
 **Build variants**
+
+En el build.gradle (:app) se implemento lo siguiente:
 ```kotlin
-Build variants en nuestro proyecto.
-```
-**Firma de aplicación**
-```kotlin
-Firma de aplicación en nuestro proyecto.
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
 ```
