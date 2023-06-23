@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 import org.bedu.proyecto01equipo16.R
-import org.bedu.proyecto01equipo16.workouts
+import org.bedu.proyecto01equipo16.routines.model.workouts
 
 class CustomAdapter(private val titles: ArrayList<workouts>) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {

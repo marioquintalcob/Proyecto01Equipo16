@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.bedu.proyecto01equipo16.R
-import org.bedu.proyecto01equipo16.workouts
+import org.bedu.proyecto01equipo16.routines.model.workouts
 
 
 private lateinit var adapter: CustomAdapter
