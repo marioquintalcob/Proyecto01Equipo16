@@ -1,9 +1,10 @@
 package org.bedu.proyecto01equipo16
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.FirebaseApp
 import org.bedu.proyecto01equipo16.login.LoginActivity
 import org.bedu.proyecto01equipo16.login.RegisterActivity
 
@@ -12,12 +13,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        FirebaseApp.initializeApp(this)
+
         boton = findViewById(R.id.btnLogin)
 
         boton.setOnClickListener {
             val bundle = Bundle()
 
-            val intent = Intent(this, LoginActivity::class.java ).apply{
+            val intent = Intent(this, LoginActivity::class.java).apply {
                 putExtras(bundle)
             }
 
@@ -29,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         boton2.setOnClickListener {
             val bundle = Bundle()
 
-            val intent = Intent(this, RegisterActivity::class.java ).apply{
+            val intent = Intent(this, RegisterActivity::class.java).apply {
                 putExtras(bundle)
             }
 
