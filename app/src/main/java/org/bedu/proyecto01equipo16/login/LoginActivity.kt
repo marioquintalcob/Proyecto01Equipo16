@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import org.bedu.proyecto01equipo16.R
+import org.bedu.proyecto01equipo16.login.signup.RecopassActivity
 import org.bedu.proyecto01equipo16.navBar.Navbar
 
 class LoginActivity : AppCompatActivity() {

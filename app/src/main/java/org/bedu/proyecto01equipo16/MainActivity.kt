@@ -6,7 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseApp
 import org.bedu.proyecto01equipo16.login.LoginActivity
-import org.bedu.proyecto01equipo16.login.RegisterActivity
+import org.bedu.proyecto01equipo16.login.signup.RegisterActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

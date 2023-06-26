@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "174323099864",
+    "project_id": "gymsobedu",
+    "storage_bucket": "gymsobedu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174323099864:android:df0b5b26f63a1962404fad",
+        "android_client_info": {
+          "package_name": "org.bedu.proyecto01equipo16"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174323099864-3ocrg1m1ih167bhl00m8j3s55q5jjhsg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwFyv_ksPF9gMFCBT9HDbsKNz4TILHe1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174323099864-3ocrg1m1ih167bhl00m8j3s55q5jjhsg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
