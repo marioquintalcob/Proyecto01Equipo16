@@ -1,4 +1,4 @@
-package org.bedu.proyecto01equipo16.login
+package org.bedu.proyecto01equipo16.login.signup
 
 import android.content.Intent
 import android.os.Bundle

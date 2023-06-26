@@ -1,10 +1,11 @@
-package org.bedu.proyecto01equipo16.login
+package org.bedu.proyecto01equipo16.login.signup
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import org.bedu.proyecto01equipo16.R
+import org.bedu.proyecto01equipo16.login.LoginActivity
 
 class SendpassActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
