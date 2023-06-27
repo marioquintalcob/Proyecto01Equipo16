@@ -5,67 +5,44 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import org.bedu.proyecto01equipo16.R
+import androidx.lifecycle.ViewModelProvider
+import org.bedu.proyecto01equipo16.databinding.ActivityLoginBinding
 import org.bedu.proyecto01equipo16.login.signup.RecopassActivity
 import org.bedu.proyecto01equipo16.navBar.Navbar
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityLoginBinding
+    private lateinit var viewModel: LoginViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
 
-        text = findViewById(R.id.txtReco)
-        text.setOnClickListener {
-            val bundle = Bundle()
-            val intent = Intent(this, RecopassActivity::class.java).apply {
-                putExtras(bundle)
-            }
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        binding.txtReco.setOnClickListener {
+            val intent = Intent(this, RecopassActivity::class.java)
             startActivity(intent)
         }
 
-        boton = findViewById(R.id.btnLogin2)
+        binding.btnLogin.setOnClickListener {
+            viewModel.doLogin(binding.txtEmail.text.toString(), binding.txtPassword.text.toString())
+        }
 
-        email = findViewById(R.id.txtEmail)
-        pass = findViewById(R.id.txtPassword)
-
-        boton.setOnClickListener {
-            // Actualice los correos con los reales del equipo.
-            val usuarios = listOf(
-                Pair("mario.e.quintal.cob@hotmail.com", "1234"),
-                Pair("otro.usuario@example.com", "contrasena"),
-                Pair("usuario3@example.com", "123456"),
-                Pair("diego@gmail.com", "1234"),
-                Pair("yaelramirezmendez@gmail.com", "1234"),
-                Pair("eguzmanh04@gmail.com", "1234"),
-                Pair("1", "1")
-            )
-
-            val emailIngresado = email.text.toString()
-            val passIngresada = pass.text.toString()
-
-            var loginExitoso = false
-
-            for (usuario in usuarios) {
-                if (emailIngresado == usuario.first && passIngresada == usuario.second) {
-                    loginExitoso = true
-                    break
-                }
-            }
-
-            if (loginExitoso) {
-                // Pasa a la pantalla del Navigation Bar
-                val bundle = Bundle()
-                val intent = Intent(this, Navbar::class.java).apply {
-                    putExtras(bundle)
-                }
+        viewModel.user.observe(this) {
+            if (it != null) {
+                val intent = Intent(this, Navbar::class.java)
                 startActivity(intent)
-
             } else {
-                Toast.makeText(this, "⚠️Datos incorrectos, favor de verificar", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "Datos incorrectos, favor de verificar", Toast.LENGTH_SHORT)
                     .show()
             }
         }
@@ -78,9 +55,4 @@ class LoginActivity : AppCompatActivity() {
         }
         return super.dispatchTouchEvent(ev)
     }
-
-    private lateinit var text: TextView
-    private lateinit var boton: Button
-    private lateinit var email: TextView
-    private lateinit var pass: TextView
 }

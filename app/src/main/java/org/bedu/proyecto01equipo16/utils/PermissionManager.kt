@@ -8,11 +8,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 
 class PermissionManager {
-
     companion object {
         const val STORAGE_PERMISSION_CODE = 100
         const val CAMERA_PERMISSION_CODE = 200
         const val CAMERA_RESULT_CODE = 201
+        const val NOTIFICATION_PERMISSION_CODE = 300
 
         fun checkCameraPermission(context: Context): Boolean {
             if (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA)
@@ -50,6 +50,13 @@ class PermissionManager {
             ActivityCompat.requestPermissions(
                 activity, arrayOf(Manifest.permission.CAMERA),
                 CAMERA_PERMISSION_CODE
+            )
+        }
+
+        fun requestNotificationPermission(activity: Activity) {
+            ActivityCompat.requestPermissions(
+                activity, arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                NOTIFICATION_PERMISSION_CODE
             )
         }
     }

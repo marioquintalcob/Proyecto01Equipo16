@@ -62,6 +62,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation("com.google.firebase:firebase-firestore-ktx")
+    implementation("com.google.firebase:firebase-messaging-ktx:23.1.2")
     // MVVM
     // Fragment
     implementation "androidx.fragment:fragment-ktx:1.6.0"

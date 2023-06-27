@@ -52,7 +52,7 @@ class RegisterViewModel : ViewModel() {
         profilePicture: String
     ) {
         viewModelScope.launch {
-            _successfulCreated.value = repo.newUser(name, phoneNumber, email, password, profilePicture)
+            _successfulCreated.value = repo.registerNewUser(name, phoneNumber, email, password, profilePicture)
         }
     }
 
