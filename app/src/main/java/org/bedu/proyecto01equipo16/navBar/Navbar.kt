@@ -9,6 +9,7 @@ import org.bedu.proyecto01equipo16.profile.Profile
 import org.bedu.proyecto01equipo16.R
 import org.bedu.proyecto01equipo16.routines.Rutinas
 import org.bedu.proyecto01equipo16.databinding.ActivityNavbarBinding
+import org.bedu.proyecto01equipo16.utils.PermissionManager
 
 class Navbar : AppCompatActivity() {
 
@@ -38,7 +39,11 @@ class Navbar : AppCompatActivity() {
             true
 
         }
+    }
 
+    override fun onStart() {
+        super.onStart()
+        PermissionManager.requestNotificationPermission(this)
     }
 
     private fun replaceFragment(fragment: Fragment){
