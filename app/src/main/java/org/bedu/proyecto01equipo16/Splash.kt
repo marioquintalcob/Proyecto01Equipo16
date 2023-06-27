@@ -1,5 +1,6 @@
 package org.bedu.proyecto01equipo16
 
+import android.app.ActivityOptions
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,7 +30,7 @@ class Splash : AppCompatActivity() {
     private fun cambiarActivity(){
         Handler().postDelayed(Runnable{
             val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
         }, DURACION)
     }
 }

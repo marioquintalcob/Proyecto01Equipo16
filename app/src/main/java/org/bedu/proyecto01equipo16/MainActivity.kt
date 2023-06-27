@@ -1,5 +1,6 @@
 package org.bedu.proyecto01equipo16
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -18,25 +19,15 @@ class MainActivity : AppCompatActivity() {
         boton = findViewById(R.id.btnLogin)
 
         boton.setOnClickListener {
-            val bundle = Bundle()
-
-            val intent = Intent(this, LoginActivity::class.java).apply {
-                putExtras(bundle)
-            }
-
-            startActivity(intent)
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
         }
 
         boton2 = findViewById(R.id.btnRegister)
 
         boton2.setOnClickListener {
-            val bundle = Bundle()
-
-            val intent = Intent(this, RegisterActivity::class.java).apply {
-                putExtras(bundle)
-            }
-
-            startActivity(intent)
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
         }
     }
 

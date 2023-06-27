@@ -1,5 +1,6 @@
 package org.bedu.proyecto01equipo16.login
 
+import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -30,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.txtReco.setOnClickListener {
             val intent = Intent(this, RecopassActivity::class.java)
-            startActivity(intent)
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
         }
 
         binding.btnLogin.setOnClickListener {
@@ -40,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
         viewModel.user.observe(this) {
             if (it != null) {
                 val intent = Intent(this, Navbar::class.java)
-                startActivity(intent)
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
             } else {
                 Toast.makeText(this, "Datos incorrectos, favor de verificar", Toast.LENGTH_SHORT)
                     .show()

@@ -1,5 +1,6 @@
 package org.bedu.proyecto01equipo16.login.signup
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -41,7 +42,7 @@ class RecopassActivity : AppCompatActivity() {
                 val intent = Intent(this, SendpassActivity::class.java).apply {
                     putExtras(bundle)
                 }
-                startActivity(intent)
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
 
             } else {
                 Toast.makeText(this, "Correo no registrado, favor de verificar", Toast.LENGTH_SHORT)

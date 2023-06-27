@@ -1,5 +1,6 @@
 package org.bedu.proyecto01equipo16.login.signup
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -19,7 +20,7 @@ class SendpassActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java).apply {
                 putExtras(bundle)
             }
-            startActivity(intent)
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
         }
 
     }
