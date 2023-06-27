@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
 import com.google.android.material.imageview.ShapeableImageView
@@ -17,9 +18,6 @@ import org.bedu.proyecto01equipo16.routines.model.workouts
 class CustomAdapter(private val titles: ArrayList<workouts>) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
     var like = false
-    likeImageView.setOnClickListener{
-        like = likeAnimation(likeImageView, R.raw.bandai_dokkan, like)
-    }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
         val v =
@@ -44,6 +42,17 @@ class CustomAdapter(private val titles: ArrayList<workouts>) :
         val tvHeading: TextView = itemView.findViewById(R.id.tvHeading)
         val title: TextView = itemView.findViewById(R.id.title)
     }
+    class MainActivity : AppCompatActivity() {
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_main)
+
+            var like = false
+            likeImageView.setOnClickListener {
+                like = likeAnimation(likeImageView, R.raw.animation_like, like)
+            }
+        }
 
     private fun likeAnimation(imageView: LottieAnimationView,
                               animation: Int,
@@ -70,4 +79,6 @@ class CustomAdapter(private val titles: ArrayList<workouts>) :
 
         return !like
     }
+
+}
 }
