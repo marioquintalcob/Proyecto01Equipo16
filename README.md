@@ -1,4 +1,4 @@
-# Fase II Desarrollo móvil - Modulo 2 Kotlin Intermedio
+# Fase III Desarrollo móvil - Modulo 3 Kotlin Avanzado
 ## Proyecto: aplicación para seguir progresos en el Gimnasio / de Ejercicios GYMSO
 
 ### Definición del Proyecto
@@ -8,9 +8,9 @@ información nutrimental, noticias acerca de deportes, etc.
 
 ### Alcance del Proyecto
 ***
-La finalidad de este proyecto es demostrar los conocimientos adquiridos durante el módulo II Kotlin Intermedio de Desarrollo Movil,
+La finalidad de este proyecto es demostrar los conocimientos adquiridos durante el módulo III Kotlin Avanzado de Desarrollo Movil,
 tomando la idea de un integrante del equipo y la desarrollamos basándonos en el lenguaje kotlin y a los conceptos aprendidos
-durante cada sesión de la fase 2.
+durante cada sesión.
 
 ***Nota importante:*** durante el desarrollo del proyecto algunas partes del código tuvieron cambios significativos para poder
 implementar temas que se vieron a lo largo del módulo.
@@ -21,910 +21,518 @@ implementar temas que se vieron a lo largo del módulo.
 * [Mario](https://github.com/marioquintalcob)
 * [Erick](https://github.com/ErickDaniel04)
 
-### Sesión 1
-***
-**Introducción a Android** <br>
+1.	Nombre de la aplicación: 
+GYMSO
+2.	Objetivo principal:
+Aplicación para seguir progresos en el Gimnasio / de Ejercicios
+3.	Estás dando continuidad al proyecto de kotlin intermedio o es uno nuevo:
+Continuidad
+4.	Brinda la liga al repositorio de tu proyecto:
+https://github.com/marioquintalcob/Proyecto01Equipo16
+5.	Brinda una descripción general de la aplicación:
+aplicación para gestión personal de los avances en rutinas, por ejemplo, consultar ejercicios del día, información nutrimental, noticias acerca de deportes, etc.
+6.	Define las funcionalidades y características de la aplicación:
+La aplicación tiene como fin proporcionar al usuario un medio para que pueda registrar los avances de sus rutinas de ejercicio ya sea de forma personal o por medio del contacto de un instructor. 
+Contiene una sección inicial de progresos y los ejercicios programados para el día, ejercicios favoritos y un calendario personalizado.
+También cuenta con un apartado de noticias que, al estar conectado a internet, se ira actualizando con lo más relevante del deporte.
+Apartado de rutinas donde el usuario podrá ver la manera correcta de realizar los ejercicios, así como los tiempos, repeticiones, instrumentos, etc. necesarios para alcanzar la meta deseada. 
+También con el apartado para el manejo de perfil para personalizarlo de acuerdo con sus necesidades.
 
-Para nuestro proyecto sabemos que el nucleo de la apps es una administracion de avances, de acuerdo a lo visto en las sesiones dimensionaremos lo que se puede abarcar y que no para evitar
-desecho de ideas pero teniendo en cuenta futuras implementaciones de ideas mas avanzadas. Durante su desarrollo se ha ido definiendo como va a interactuar el usuario con nuestra aplicacion,
-es por ello que se realizaron esbozos de las pantallas.
+Pantalla splash:
+ 
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/b89c2f3c-a2cd-4415-bf22-f1691c6d728b)
 
-Ejemplos de la funcion del boton login que se utilizo durante el desarrollo de nuestra aplicacion. NOTA: Se utilizaron datos estaticos sin embargo mas adelante se tiene en cuenta el uso de
-conexiones y consultas a bases de datos reales.
+Pantalla que observa el usuario al momento de lanzar la aplicación, cuenta con el icono de esta y una barra de carga animada.
 
-```kotlin        
-boton.setOnClickListener {
-            // Actualice los correos con los reales del equipo.
-            val usuarios = listOf(
-                Pair("mario.e.quintal.cob@hotmail.com", "1234"),
-                Pair("otro.usuario@example.com", "contrasena"),
-                Pair("usuario3@example.com", "123456"),
-                Pair("diego@gmail.com","1234"),
-                Pair("n-diegotorres@hotmail.com", "1234"),
-                Pair("yaelramirezmendez@gmail.com", "1234"),
-                Pair("eguzmanh04@gmail.com", "1234")
-            )
+Pantalla de selección, login o registro
 
-            val emailIngresado = email.text.toString()
-            val passIngresada = pass.text.toString()
+ ![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/6c515a6a-2d2b-4bd5-9fe0-d9846d16e046)
 
-            var loginExitoso = false
 
-            for (usuario in usuarios) {
-                if (emailIngresado == usuario.first && passIngresada == usuario.second) {
-                    loginExitoso = true
-                    break
-                }
+En esta pantalla el usuario podrá elegir entre iniciar sesión (para usuarios ya registrados) o registrarse (usuarios nuevos)
+
+
+Pantalla de login
+
+ ![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/be082808-6c4b-4ddc-909d-d4c1497d477e)
+
+
+Pantalla para los usuarios ya registrados, en donde ingresan a la aplicación con su correo electrónico y contraseña.
+
+Pantalla de recuperación de contraseña
+
+ ![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/ef5791ee-66b2-431b-94c8-50d5d0d12449)
+
+
+Si el usuario olvido o perdió su contraseña, mediante su correo electrónico puede solicitar que le sea enviada.
+
+Pantalla de registro
+
+ ![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/43f0fe8a-548a-4463-8c5a-71b2da9db97d)
+
+
+En esta pantalla los usuarios nuevos podrán registrarse con sus datos para poder ingresar a la aplicación.
+
+Pantalla inicial (Home)
+
+ ![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/d612946f-6c81-4a5e-932c-c80c87943e27)
+
+
+Después de iniciar sesión el usuario visualizara esta pantalla donde se encuentra la sección de opciones, calendario, progreso y entrenamientos favoritos. En la parte de abajo se encuentra el apartado para la navegación.
+
+
+Pantalla Noticias
+
+ ![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/fa7fd547-ce36-40ad-9b1d-f0998ecd7455)
+
+
+Pantalla en donde el usuario podrá visualizar las noticias más relevantes en el mundo del deporte, de nutrición, entre otros temas de interés.
+
+Pantalla Rutinas
+
+ ![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/c10a44fd-e1a1-484a-8933-54144ea5f2c8)
+
+
+Pantalla en donde el usuario podrá consultar las diferentes rutinas que puede realizar, ver los detalles de repeticiones, tiempos, peso, para que regiones del cuerpo sirven, entre otra información importante para su optima realización.
+
+Pantalla Perfil
+
+ ![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/383e3a86-f99a-46c8-9b89-7103f8001205)
+
+ 
+Pantalla en donde el usuario visualizará su información personal, así como también podrá editarla y actualizarla. Por otro lado, podrá cerrar sesión si así lo desea.
+
+●	Wireframes 
+
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/cfd5d683-1ee1-4582-818b-f28fa67c6e52)
+      
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/d9ebd1da-bd93-4c65-8f53-6c543ec78f5f)
+
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/208cf584-dee2-498c-9fc9-8d09846e5b02)
+
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/f68d15ae-cfc5-45d9-87fd-b638fb5eacfe)
+
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/8fc2b8be-5231-448f-8839-673820d17df9)
+
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/37fe55ba-1c83-4a1a-aab7-19365528367c)
+
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/8cbdbf1d-92b1-4e9a-9b26-133b598a3136)
+
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/f0e787d9-7df1-4987-b8a6-f25551632f76)
+
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/4e528d19-6b30-4784-b8b5-cb9584991953)
+                                                                                                                                                         	                                                 
+1.	**Networking:**
+Firebase es una plataforma digital diseñada para facilitar el desarrollo de aplicaciones web y móviles de calidad de una forma rápida y eficiente, con el objetivo de mejorar el rendimiento de las mismas a través de la implementación de sus distintos módulos que harán que la aplicación sea mucho más manejable, segura y fácil de utilizar para los usuarios.
+
+Cloud Firestore, la base de datos NoSQL de Firebase, flexible, escalable y en la nube con el objetivo de almacenar y sincronizar datos en tiempo real para el desarrollo en servidores, dispositivos móviles y la web. Los datos están estructurados como documentos organizados en colecciones.
+
+Se implemento Firebase para la consulta de “Users” en el Cloud Firestore archivo UserRepository.kt:
+
+package org.bedu.proyecto01equipo16.login.data
+
+import android.util.Log
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.tasks.await
+
+class UserRepository {
+    private val auth = Firebase.auth
+    private val db = Firebase.firestore
+
+    suspend fun newUser(
+        name: String,
+        phoneNumber: String,
+        email: String,
+        password: String,
+        profilePicture: String
+    ): Boolean {
+        val user = hashMapOf(
+            "name" to name,
+            "phoneNumber" to phoneNumber,
+            "email" to email,
+            //"profilePicture" to profilePicture
+        )
+
+        val existUser = db.collection("Users").document(email).get().await()
+        if (existUser.data.isNullOrEmpty()) {
+            auth.createUserWithEmailAndPassword(email, password)
+            db.collection("Users").document(email).set(user)
+            return true
+        }
+        return false
+    }
+}
+
+2.	**Acceso a Hardware:**
+Se implementa el uso de almacenamiento y la cámara del dispositivo, esto para guardar la foto del usuario al momento de registrarse. Archivo PermissionManager.kt:
+
+package org.bedu.proyecto01equipo16.utils
+
+import android.Manifest
+import android.app.Activity
+import android.content.Context
+import android.content.pm.PackageManager
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+
+class PermissionManager {
+
+    companion object {
+        const val STORAGE_PERMISSION_CODE = 100
+        const val CAMERA_PERMISSION_CODE = 200
+        const val CAMERA_RESULT_CODE = 201
+
+        fun checkCameraPermission(context: Context): Boolean {
+            if (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED
+            ) {
+                return false;
             }
+            return true;
+        }
 
-            if (loginExitoso) {
-                // Pasa a la pantalla del Navigation Bar
-                val bundle = Bundle()
-                val intent = Intent(this, Navbar::class.java ).apply{
-                    putExtras(bundle)
-                }
-                startActivity(intent)
+        fun checkStoragePermission(context: Context): Boolean {
+            val write = ContextCompat.checkSelfPermission(
+                context,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            )
+            val read = ContextCompat.checkSelfPermission(
+                context,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+            )
+            return write == PackageManager.PERMISSION_GRANTED && read == PackageManager.PERMISSION_GRANTED
+        }
 
-            } else {
-                Toast.makeText(this, "Datos incorrectos, favor de verificar", Toast.LENGTH_SHORT).show()
+        fun requestStoragePermission(activity: Activity) {
+            ActivityCompat.requestPermissions(
+                activity,
+                arrayOf(
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+                ),
+                STORAGE_PERMISSION_CODE
+            )
+        }
+
+        fun requestCameraPermission(activity: Activity) {
+            ActivityCompat.requestPermissions(
+                activity, arrayOf(Manifest.permission.CAMERA),
+                CAMERA_PERMISSION_CODE
+            )
+        }
+    }
+}
+
+3.	**Persistencia y Bases de datos**
+
+Se implementa el registro real de usuarios con Firebase, archivo RegisterViewModel.kt:
+
+package org.bedu.proyecto01equipo16.login.signup
+
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
+import org.bedu.proyecto01equipo16.login.data.UserRepository
+import org.bedu.proyecto01equipo16.utils.PermissionManager
+
+class RegisterViewModel : ViewModel() {
+    private val repo = UserRepository()
+
+    private val _emptyFields = MutableLiveData<Boolean>()
+    val emptyFields: LiveData<Boolean> = _emptyFields
+
+    private val _passwordBadFormat = MutableLiveData<Boolean>()
+    val passwordBadFormat: LiveData<Boolean> = _passwordBadFormat
+
+    private val _successfulCreated = MutableLiveData<Boolean>()
+    val successfulCreated: LiveData<Boolean> = _successfulCreated
+
+    private val _setProfilePicture = MutableLiveData<Boolean>()
+    val setProfilePicture: LiveData<Boolean> = _setProfilePicture
+
+    private val _launchCamera = MutableLiveData<Boolean>()
+    val launchCamera: LiveData<Boolean> = _launchCamera
+
+    fun validateDateAndSave(name: String, phoneNumber: String, email: String, password: String, confirmPassword: String, profilePicture: String) {
+        if(name.isNotEmpty() && phoneNumber.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
+            if (password.length < 6 || password != confirmPassword) {
+                _passwordBadFormat.value = true
+                return
+            }
+            _passwordBadFormat.value = false
+            _emptyFields.value = false
+            registerUser(name, phoneNumber, email, password, profilePicture)
+        } else {
+            _emptyFields.value = true
+            return
+        }
+    }
+
+    private fun registerUser(
+        name: String,
+        phoneNumber: String,
+        email: String,
+        password: String,
+        profilePicture: String
+    ) {
+        viewModelScope.launch {
+            _successfulCreated.value = repo.newUser(name, phoneNumber, email, password, profilePicture)
+        }
+    }
+
+    fun requestCamera(context: Context, activity: Activity) {
+        when {
+            !PermissionManager.checkStoragePermission(context) -> {
+                PermissionManager.requestStoragePermission(activity)
+                return
+            }
+            !PermissionManager.checkCameraPermission(context) -> {
+                PermissionManager.requestCameraPermission(activity)
+                return
+            }
+            else -> _launchCamera.value = true
+        }
+    }
+
+    fun onRequestPermissionsResult(
+        requestCode: Int, activity: Activity
+    ) {
+        when (requestCode) {
+            PermissionManager.STORAGE_PERMISSION_CODE -> {
+                PermissionManager.requestCameraPermission(activity)
+                return
+            }
+            PermissionManager.CAMERA_PERMISSION_CODE -> {
+                _launchCamera.value = true
+                return
             }
         }
-```
-![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/bc1befb7-b8a2-4cb0-88f2-c70e9b502f9e)
+    }
 
-### Sesión 2
-***
-**Views**
+    fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        _launchCamera.value = false
+        _setProfilePicture.value = false
 
-Para el uso de Views aprendido en la sesion 2, aplicamos a nuestro proyecto aquellos que creemos se acoplan
-mejor a las problematicas de nuestro proyecto.
+        if (requestCode == PermissionManager.CAMERA_RESULT_CODE) {
+            _setProfilePicture.value = true
+            return
+        }
+    }
+}
+ 
+4.	**Patrones de arquitectura:**
+   
+Se organizo el proyecto utilizando lo aprendido en la sesión de este tema. RegisterActivity.kt: 
 
-Por ejemplo, en el siguiente layout que es el inicial utilizamos un ImageView y dos botones los cuales envian a otro, dependiendo de la opción que eligió, 
-ya sea registrarse o iniciar sesion.
+package org.bedu.proyecto01equipo16.login.signup
 
-![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/86c0fdc1-9647-43bd-8856-91efddb7550d)
+import android.content.ContentValues
+import android.content.DialogInterface
+import android.content.Intent
+import android.net.Uri
+import android.os.Bundle
+import android.provider.MediaStore
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Base64
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
+import org.bedu.proyecto01equipo16.databinding.ActivityInputBinding
+import org.bedu.proyecto01equipo16.utils.PermissionManager
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+class RegisterActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityInputBinding
+    private lateinit var viewModel: RegisterViewModel
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="194dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="368dp"
-        android:backgroundTint="@color/orange"
-        android:text="@string/botonLogin"
-        android:fontFamily="@font/sf_regular"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    private var imageUri: Uri? = null
 
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="194dp"
-        android:layout_height="47dp"
-        android:layout_marginBottom="184dp"
-        android:backgroundTint="@color/orange"
-        android:text="@string/botonRegistro"
-        android:fontFamily="@font/sf_regular"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
-        app:layout_constraintVertical_bias="0.168" />
+    private var hasBeenHandledCamera = false
 
-    <ImageView
-        android:id="@+id/imgLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.795"
-        app:srcCompat="@drawable/muscle_logo"
-        tools:srcCompat="@tools:sample/avatars" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-```
-Los botones realizan las siguientes funciones dependiendo cual sea el caso elegido por el usuario:
-
-```kotlin
-class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        boton = findViewById(R.id.btnLogin)
+        binding = ActivityInputBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        boton.setOnClickListener {
-            val bundle = Bundle()
-
-            val intent = Intent(this, LoginActivity::class.java ).apply{
-                putExtras(bundle)
-            }
-
-            startActivity(intent)
-        }
-
-        boton2 = findViewById(R.id.btnRegister)
-
-        boton2.setOnClickListener {
-            val bundle = Bundle()
-
-            val intent = Intent(this, RegisterActivity::class.java ).apply{
-                putExtras(bundle)
-            }
-
-            startActivity(intent)
-        }
+        viewModel = ViewModelProvider(this)[RegisterViewModel::class.java]
     }
 
-    private lateinit var boton: Button
-    private lateinit var boton2: Button
-}
-```
+    override fun onStart() {
+        super.onStart()
 
-Si el usuario elige iniciar sesion es enviado a esta pantalla:
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LoginActivity">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/txtEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.721"
-        app:srcCompat="@drawable/muscle_logo"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <EditText
-        android:id="@+id/txtEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:drawableLeft="@drawable/email_ic"
-        android:drawablePadding="12dp"
-        android:ems="10"
-        android:fontFamily="@font/sf_regular"
-        android:hint="email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/txtPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/txtPassword"
-        android:layout_width="210dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="44dp"
-        android:drawableLeft="@drawable/lock_ic"
-        android:drawablePadding="12dp"
-        android:ems="10"
-        android:fontFamily="@font/sf_regular"
-        android:hint="contraseña"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnLogin2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:backgroundTint="@color/orange"
-        android:fontFamily="@font/sf_regular"
-        android:text="@string/botonLogin"
-        app:layout_constraintBottom_toTopOf="@+id/txtReco"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="26dp"
-        android:layout_height="31dp"
-        android:layout_marginEnd="176dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="2.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.915"
-        app:srcCompat="@drawable/gmail_icon" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="31dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="168dp"
-        android:layout_marginRight="64dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView6"
-        app:layout_constraintHorizontal_bias="2.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.913"
-        app:srcCompat="@drawable/face_icon" />
-
-    <TextView
-        android:id="@+id/txtReco"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="104dp"
-        android:fontFamily="@font/sf_regular"
-        android:text="@string/olvidoContrasena"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-```
-Y si elige registrase es enviado a esta pantalla donde se le piden sus datos para completar dicho registro:
-
-![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/5ade67f3-2671-49a0-bd4b-74ab1ab1bd48)
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/background"
-    android:orientation="vertical"
-    tools:context=".login.RegisterActivity">
-
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar_register"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:background="@color/orange"
-        >
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/add_perfil" />
-
-        <TextView
-            android:id="@+id/text_user_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/jakarta_regular"
-            android:text="Nombre de usuario"
-            android:textColor="@color/white"
-            android:textSize="24dp"
-            android:textStyle="bold" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/orange" />
-    </LinearLayout>
-
-    <!-- Label Datos generales -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp">
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_profile" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:fontFamily="@font/jakarta_regular"
-            android:text="Completa tu registro"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-        </LinearLayout>
-
-    <!-- Input Nombre -->
-        <com.google.android.material.textfield.TextInputLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
-            android:hint="Nombre y Apellidos">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/inputLayout1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:maxLines="1" />
-        </com.google.android.material.textfield.TextInputLayout>
-    <!-- Input Teléfono -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
-            android:hint="Telefono">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:maxLines="1" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-    <!-- Input Correo -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:hint="Correo electrónico">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:maxLines="1" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- Input Contraseña -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:hint="Contraseña"
-        android:inputType="textPassword">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:maxLines="1" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- Input Confirmar contraseña -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputLayout5"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:hint="Confirmar contraseña">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:maxLines="1"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/botonregistrar"
-        android:layout_width="169dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="100dp"
-        android:backgroundTint="@color/orange"
-        android:drawableLeft="@drawable/save_ic_white"
-        android:fontFamily="@font/jakarta_regular"
-        android:text="Crear cuenta"
-        android:textColor="@color/white" />
-
-
-</LinearLayout>
-```
-
-### Sesión 3
-
-**Activities y Layouts**
-
-**Layout**
-
-En esta sesion aprendimos a como orientarse en la implementación de nuevas Activities y sus layouts. Para aplicar estos conceptos utilizamos en su mayoria el ConstraintLayout:
-Ya que es el layout más nuevo de android que pretende reemplazar a los demás layouts mediante un sistema de relación entre views muy flexible y de fácil uso con la integración del _Layout Editor_.
-Este layout es el último que los desarrolladores de google han creado y es el que viene por defecto al crear un proyecto con un Activity vacío. El objetivo de este es reemplazar los otros layouts para tener una organización plana (sin ViewGroups anidados).
-La inclusión de este layout incluye muchos conceptos nuevos que facilitan el manejo de layouts complejos que puedan tener muchas relaciones con otros componentes. ConstraintLayout es parte la librería androidx, por lo que es necesaria la inclusión del repositorio maven de Google para su instalación.
-
-Los constraints son relaciones restrictivas entre Views que determinan la posición de cada uno de estos (similar a las relaciones en los RelativeLayouts). Para definir la posición de un widget, este debe tener definido al menos un constraint vertical y otro horizontal.
-El siguiente Layout que utiliza constraints es el que visualiza el usuario cuando requiere recuperar su contraseña olvidada.
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RecopassActivity">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
-        android:text="@string/recuperar1"
-        app:layout_constraintBottom_toTopOf="@+id/txtEmail2"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:fontFamily="@font/sf_regular"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/txtEmail2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:drawableLeft="@drawable/email_icon"
-        app:layout_constraintBottom_toTopOf="@+id/btnPass"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="256dp"
-        android:text="@string/recuperar2"
-        android:fontFamily="@font/sf_regular"
-        android:backgroundTint="@color/orange"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
-```
-![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/1cf3bee7-50bf-456f-a536-8dbdb0813e0f)
-
-**Activity**
-
-La navegación entre Activities es gestionada por un stack de Activities. Al correrse una nueva Activity, esta es puesta hasta la parte superior del stack y se mantiene ahí hasta que uno nuevo se manda a primer plano, dejando al anterior abajo de él.
-Al finalizar una Activity, este se elimina del stack y reproduce un callback que podrá ser usado para manejar eventos.
-Un activity tiene un ciclo de vida determinado, que comienza desde que el _Activity_ se abre por primera vez y termina al finalizarse por diversas causas (cerrar la aplicación como ejemplo).
-El ciclo de vida se divide en varias etapas, en cada una de estas, el sistema reproduce un callback definido por nosotros a través de la sobreescritura de un método de la clase padre.
-Estos callbacks son muy importantes, porque en cada uno de ellos podemos hacer la configuración de nuestra pantalla mediante la declaración de variables, inicialización de procesos,
-asignación de la interfaz de usuario al _Activity_, el cierre de algún proceso, etc.
-
-Si el usuario en el layout citado anteriormente ingresa un correo existente en la base de datos (se utiliza una lista estatica), el boton lo envia al Activity correspondiente al mensaje exitoso,
-de lo contrario se muestra una notificacion "toast" indicando que hubo algún error en la información ingresada.
-
-```kotlin
-        boton.setOnClickListener {
-            val emails = listOf("mario.e.quintal.cob@hotmail.com", "n-diegotorres@hotmail.com", "yaelramirezmendez@gmail.com", "eguzmanh04@gmail.com" )
-
-            val emailIngresado = email.text.toString()
-
-            var emailExistente = false
-
-            for (e in emails) {
-                if (emailIngresado == e) {
-                    emailExistente = true
-                    break
-                }
-            }
-
-            if (emailExistente) {
-                val bundle = Bundle()
-                val intent = Intent(this, SendpassActivity::class.java ).apply{
-                    putExtras(bundle)
-                }
-                startActivity(intent)
+        viewModel.successfulCreated.observe(this, Observer {
+            val builder = AlertDialog.Builder(this)
+            if (it) {
+                builder
+                    .setTitle("Usuario creado con exito")
+                    .setMessage("Ya puedes iniciar sesion")
+                    .setPositiveButton("Continuar") { dialog, _ ->
+                        dialog.cancel()
+                        this.finish()
+                    }
+                    .show()
 
             } else {
-                Toast.makeText(this, "Correo no registrado, favor de verificar", Toast.LENGTH_SHORT).show()
+                builder
+                    .setTitle("Hubo un problema")
+                    .setMessage("Hubo un error al crear el usuario o ya existe uno registrado con ese correo")
+                    .setPositiveButton("Ok", DialogInterface.OnClickListener { _, _ ->
+                        finishActivity(RESULT_OK)
+                    })
+                    .show()
+            }
+        })
+
+        viewModel.launchCamera.observe(this) {
+            if (it && !hasBeenHandledCamera) {
+                hasBeenHandledCamera = true
+                launchCamera()
+                return@observe
+            }
+            hasBeenHandledCamera = false
+        }
+
+        viewModel.setProfilePicture.observe(this) {
+            if (it) {
+                Glide.with(this)
+                    .load(imageUri)
+                    .transform(CircleCrop())
+                    .into(binding.imaProfile)
             }
         }
-```
 
-### Sesión 4
-***
-**Listas**
+        viewModel.passwordBadFormat.observe(this) {
+            if (it) {
+                Toast.makeText(
+                    this,
+                    "No coinciden las contraseñas o tiene menos de 6 caracteres",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
 
-En esta sesion aprendimos como se establece el código que desplega listas scrolleables de elementos en la pantalla permitiendo la interacción con los elementos de las listas y tambien
-a utilizar layouts personalizados para darles estilo.
+        viewModel.emptyFields.observe(this) {
+            if (it) {
+                Toast.makeText(this, "Hay campos vacios", Toast.LENGTH_SHORT).show()
+            }
+        }
 
-```kotlin
-class NewsProvider {
-    companion object{
-        val articulosList = listOf<Articulos>(
-            Articulos("Giros rusos: qué son y cómo hacerlos",
-            "Los giros rusos consisten en girar el torso, llevando de un lado a otro las manos y sin mover las piernas.",
-            "Saber más...",
-            "https://t1.uc.ltmcdn.com/es/posts/6/7/1/giros_rusos_que_son_y_como_hacerlos_53176_300_square.webp"
-            ),
-            Articulos("Ejercicios para quemar grasa abdominal",
-                "Para descubrir los mejores ejercicios para quemar grasa abdominal te recomendamos que sigas leyendo este artículo.",
-                "Saber más...",
-                "https://t2.uc.ltmcdn.com/es/posts/6/1/0/ejercicios_para_quemar_grasa_abdominal_53016_300_square.webp"
-            ),
-            Articulos("Cómo hacer peso muerto",
-                "Si estás decidido a tener una rutina de ejercicio e incluir el peso muerto, debes saber que se trata de una práctica muy completa pero que debe realizarse correctamente para evitar lesiones.",
-                "Saber más...",
-                "https://t2.uc.ltmcdn.com/es/posts/2/6/7/como_hacer_peso_muerto_51762_600.webp"
-            ),
-            Articulos("Cómo hacer press de banca",
-                "Para poder hacer el press de banco correctamente, necesitarás una superficie donde poder apoyar toda la zona de la espalda y la cabeza.",
-                "Saber más...",
-                "https://t1.uc.ltmcdn.com/es/posts/1/0/7/como_hacer_press_de_banca_51701_600.webp"
-            ),
-            Articulos("Cómo hacer remo con barra",
-                "Este ejercicio no requiere de mucha preparación previa y su ejecución podría recordar a la del peso muerto.",
-                "Saber más...",
-                "https://t2.uc.ltmcdn.com/es/posts/2/8/6/como_hacer_remo_con_barra_51682_600.webp"
-            ),
-            Articulos("Beneficios de hacer lagartijas",
-                "Las lagartijas son ejercicios muy prácticos que se pueden realizar en casa sin más herramientas que nuestro propio cuerpo y una superficie plana.",
-                "Saber más...",
-                "https://t2.uc.ltmcdn.com/es/posts/9/3/7/beneficios_de_hacer_lagartijas_50739_600.webp"
-            ),
-            Articulos("Ejercicios para bíceps y tríceps",
-                "Para ganar masa y resistencia muscular en los brazos te traemos los mejores ejercicios para bíceps y tríceps.",
-                "Saber más...",
-                "https://t1.uc.ltmcdn.com/es/posts/9/6/2/ejercicios_para_biceps_y_triceps_50269_600.webp"
-            ),
-            Articulos("Ejercicios para fortalecer la espalda",
-                "La espalda es una de las regiones del cuerpo más importantes, pues se compone de huesos, músculos y otros tejidos que van desde el cuello hasta la cintura pélvica",
-                "Saber más...",
-                "https://t2.uc.ltmcdn.com/es/posts/1/8/5/ejercicios_para_fortalecer_la_espalda_49581_600.webp"
-            ),
+        binding.imaProfile.setOnClickListener {
+            viewModel.requestCamera(this, this)
+        }
+
+        binding.btnCreateAccount.setOnClickListener {
+            val bytes = imageUri?.let { it1 -> contentResolver.openInputStream(it1)?.readBytes() }
+            val profilePicture = bytes?.let { Base64.encodeToString(bytes, Base64.DEFAULT) }
+
+            viewModel.validateDateAndSave(
+                name = binding.etName.text.toString(),
+                phoneNumber = binding.etPhone.text.toString(),
+                email = binding.etEmail.text.toString(),
+                password = binding.etPassword.text.toString(),
+                confirmPassword = binding.etConfirmPassword.text.toString(),
+                profilePicture = profilePicture ?: ""
+            )
+        }
+
+        binding.etName.addTextChangedListener(object : TextWatcher {
+            override fun onTextChanged(
+                s: CharSequence, start: Int,
+                before: Int, count: Int
+            ) {
+                binding.textUserName.text = binding.etName.text
+            }
+
+            override fun afterTextChanged(p0: Editable?) {}
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+        })
+    }
+
+    private fun launchCamera() {
+        val contentValues = ContentValues()
+        contentValues.put(MediaStore.Images.Media.TITLE, "Temp_pic")
+        contentValues.put(MediaStore.Images.Media.DESCRIPTION, "Temp Description")
+        imageUri = this.contentResolver.insert(
+            MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+            contentValues
         )
+        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
+        startActivityForResult(cameraIntent, PermissionManager.CAMERA_RESULT_CODE)
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        viewModel.onRequestPermissionsResult(requestCode, this)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        viewModel.onActivityResult(requestCode, resultCode, data)
     }
 }
-```
 
-En las siguientes clases podemos observar como se implementa en el proyecto un RecyclerView el cual es una mejora de los ListAdapters, reciclando Views y métodos para ahorrar recursos.
-En este ejemplo creamos uno desde cero, incluyendo su Adapter.
+5.-**Animaciones y transiciones:**
 
-Adapter
-```kotlin
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
-import org.bedu.proyecto01equipo16.R
-import org.bedu.proyecto01equipo16.news.model.Articulos
+Se implementaron transiciones al abrir nuevos activities:
 
-class NewsAdapter(private val comunityList:List<Articulos>) : RecyclerView.Adapter<NewsViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        return NewsViewHolder(layoutInflater.inflate(R.layout.card_news, parent, false))
-    }
+startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
 
-    override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-        val item = comunityList[position]
-        holder.render(item)
-    }
+6.-**Firebase y Notifications:**
 
-    override fun getItemCount(): Int = comunityList.size
+Se configuro la aplicación para poder trabajar con Firebase Messaging:
+implementation("com.google.firebase:firebase-messaging-ktx:23.1.2")
 
+Archivo FirebaseMsgService.kt
+
+package org.bedu.proyecto01equipo16.utils
+
+import com.google.firebase.messaging.FirebaseMessagingService
+
+class FirebaseMsgService: FirebaseMessagingService() {
 }
-```
 
-ViewHolder
-```kotlin
-import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import org.bedu.proyecto01equipo16.R
-import org.bedu.proyecto01equipo16.news.model.Articulos
+La aplicación conserva todos los temas abordados en Kotlin intermedio.
 
-class NewsViewHolder(view: View):RecyclerView.ViewHolder(view){
+La aplicación fue ideada basándose en comparación a aplicaciones de gestión de ejercicios, tomando las mejores características de estas en implementándolas a nuestro aprendizaje en desarrollo de aplicaciones, un ejemplo es la aplicación Gym WP que ofrece un periodo de prueba gratuito y posteriormente solicita una suscripción. A continuación se anexa el link a  la aplicación e imágenes. 
+Gym WP - Ejercicio de Gimnasio
 
-    val titulo = view.findViewById<TextView>(R.id.comunityTitle)
-    val texto = view.findViewById<TextView>(R.id.comunityTexto)
-    val url = view.findViewById<TextView>(R.id.comunityURL)
-    val foto = view.findViewById<ImageView>(R.id.comunityImg)
+https://play.google.com/store/apps/details?id=com.lealApps.pedro.gymWorkoutPlan&hl=es&gl=US&pli=1
 
-    fun render(comunityModel: Articulos){
-        titulo.text = comunityModel.titulo
-        texto.text = comunityModel.descripcion
-        url.text = comunityModel.url
-        Glide.with(foto.context).load(comunityModel.foto).into(foto)
-    }
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/2d31282b-0268-40e5-8fd4-8077cf6bc3fa)
 
-}
-```
-![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/19f89b13-39b0-4cd4-b173-fc6179e418b4)
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/c1475bb3-c176-4589-be3a-c36ca90f75e5)
 
-### Sesión 5
-**Fragments**
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/e6fb0aae-4f6f-4cbd-807d-df7140b0691a)
+                       
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/b9d49144-694c-47ae-9f98-98f43eca2f70)
 
-En esta sesion aprendimos que como el nombre lo indica, un Fragment es un fragmento de la UI que implementa tanto un ciclo de vida y eventos propios.
-En términos prácticos, nos podríamos referir a un Fragment como una especie de Activity que puede ser reutilizada e insertada en otras Activities como si de un View se tratase.
-Un Fragment siempre está asignado dentro de una Activity especial: un FragmentActivity y esta puede contener varios Fragments para dividir nuestra interfaz en varias porciones,
-formando diferentes configuraciones dependientes de factores como la orientación de la pantalla, su resolución, etc.
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/abdad9bb-2237-42d0-bd59-3ccbe92554e9)
 
-En nuestro proyecto utilizamos una actividad que contiene el siguiente FrameLayout
-```xml
-    <FrameLayout
-        android:id="@+id/frame_layout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/a3f731bc-3b9d-42f2-bb43-0057c1b31248)
 
-    </FrameLayout>
-```
-El cual mediante codigo se comunica con 4 diferentes Fragments, y mostrara el correspondiente a la eleccion del usuario:
-```kotlin
-class Navbar : AppCompatActivity() {
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/2a8d8ecf-fdbe-42a4-886e-1eba33885825)
+                       
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/7cdf3b4d-5163-4c8a-8888-6b2e32ea23bc)
 
-    private lateinit var binding: ActivityNavbarBinding
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/4b0712d0-9f90-414e-84a2-fda8d7a25a16)
+                      
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/63f088fd-d745-4e39-a4ee-fb01e1c152e1)
 
-    override fun onCreate(savedInstanceState: Bundle?){
-        super.onCreate(savedInstanceState)
-        binding = ActivityNavbarBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        replaceFragment(Home())
-
-        binding.bottomNavigationView.setOnItemSelectedListener {
-
-            when (it.itemId){
-
-                R.id.home -> replaceFragment(Home())
-                R.id.comunidad -> replaceFragment(Comunity())
-                R.id.nutricion -> replaceFragment(Nutrition())
-                R.id.perfil -> replaceFragment(Profile())
-
-                else -> {
-
-
-                }
-
-            }
-            true
-
-        }
-
-    }
-
-    private fun replaceFragment(fragment: Fragment){
-
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout, fragment)
-        fragmentTransaction.commit()
-
-    }
-
-}
-```
-![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/1a5bdf57-08e3-47cc-aa35-a63f0a200988)
-
-Siguiendo con el tema de fragments, el siguiente se implemento para el uso de un recyclerview:
-```kotlin
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#f1c15d"
-    tools:context=".routines.Rutinas">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Routines Fragment"
-        android:textSize="26dp"
-        android:gravity="center"
-        />
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="36dp"
-        android:text="EJERCICIOS"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/card_layout"
-        />
-
-</FrameLayout>
-```
-### Sesión 6
-***
-**Material Design**
-
-En esta seccion aprendimos que Material Design es un sistema que envuelve a una guia de estilo de diseño, herramientas y componentes para aplicaciones móviles y web.
-La base del concepto de este es que toda la interfaz debe ser representado por materiales, (específicamente papel y tinta) y añade conceptos visuales como textura,
-representación de luces y sombras o altura.
-
-En nuestro proyecto implementamos material design cargando la libreria de soporte en el archivo build.gradle(App) con la siguiente sintaxis:
-
-```kotlin
-implementation 'com.google.android.material:material:1.5.0'
-```
-
-El cual se carga de la siguiente forma en el tema a utilizar en nuestro proyecto:
-```xml
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Proyecto01Equipo16" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
-
-    <style name="Theme.Proyecto01Equipo16" parent="Base.Theme.Proyecto01Equipo16" />
-</resources>
-```
-Las CardViews se implementaron en el Home:
-```kotlin
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.RadioButton
-import androidx.core.content.ContextCompat
-import androidx.core.view.children
-import androidx.fragment.app.Fragment
-import org.bedu.proyecto01equipo16.R
-import org.bedu.proyecto01equipo16.databinding.FragmentHomeBinding
-
-class Home : Fragment() {
-    private var _binding: FragmentHomeBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.homeRadioGroup.setOnCheckedChangeListener { group, checkedId ->
-            for (viewE in group.children) {
-                val radio = viewE as RadioButton
-                radio.setBackgroundColor(ContextCompat.getColor(view.context, R.color.white))
-                radio.setTextColor(ContextCompat.getColor(view.context, R.color.black))
-            }
-
-            val radioButton = view.findViewById<RadioButton>(checkedId)
-            radioButton.background = ContextCompat.getDrawable(view.context, R.drawable.orange_circle_drawable)
-            radioButton.setTextColor(ContextCompat.getColor(view.context, R.color.white))
-        }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-}
-```
-
-![1684805274404](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/e1e313b0-85b7-4297-8a53-e81dc5e6c290)
-
-
-### Sesión 7
-***
-**Menús**
-
-En esta sesion vimos lo relacionado a los menús. En Android existen tres tipos de menú, Popup, contextual y de opciones. Cada menú debe tener un archivo XML relacionado a él, este definirá su Layout.
-Así como hemos visto en las clases, el elemento correspondiente a un menú en XML será <menu…/> y sus elementos internos serán <items…./>.
-
-El menu utilizado en nuestra aplicación, se encuentra en la parte inferior:
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item android:title="Inicio"
-        android:id="@+id/home"
-        android:fontFamily="@font/jakarta_regular"
-        android:icon="@drawable/ic_home"
-        />
-    <item android:title="News"
-        android:id="@+id/comunidad"
-        android:fontFamily="@font/jakarta_regular"
-        android:icon="@drawable/news_icon"
-        />
-    <item
-        android:id="@+id/rutinas"
-        android:icon="@drawable/gym_icon"
-        android:title="Rutinas" />
-
-    <item android:title="Perfil"
-        android:id="@+id/perfil"
-        android:icon="@drawable/user_icon"
-        />
-</menu>
-```
-[device-2023-05-22-120033.webm](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/e1800041-07ae-4af5-b9f8-a55f9c542dd5)
-
-### Sesión 8
-***
-**Gradle y Preparación para lanzamiento**
-
-En esta sesion vimos la informacion relacionada con configurar gradle para el lanzamiento, las Build variants que son diferentes versiones de una aplicación y la Firma de aplicacion que es
-generar un apk de prueba, para instalarlo en un dispositivo, compilando un archivo .aab y probando su funcionalidad mediante buildtool para que finalmente se firme la aplicación de release y se pueda testear en búsqueda de algún defecto.
-
-**Build variants**
-
-En el build.gradle (:app) se implemento lo siguiente:
-```kotlin
-    buildTypes {
-        debug {
-            applicationIdSuffix ".debug"
-            debuggable true
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-```
+![imagen](https://github.com/marioquintalcob/Proyecto01Equipo16/assets/119343518/ef206873-3bb0-4ab9-a579-7661e2af813c)
